@@ -7,24 +7,21 @@
                 <div class="stats">
                     <div class="stat-item">
                         <h3>190+</h3>
-                        <p><span class="highlight">Satisfied</span> customer</p>
+                        <p v-html="t('stats_satisfied')" :lang="locale"></p>
                     </div>
                     <div class="stat-item">
                         <h3>120+</h3>
-                        <p>Professional <span class="highlight">Trainer</span></p>
+                        <p v-html="t('stats_trainer')" :lang="locale"></p>
                     </div>
                 </div>
             </div>
 
             <!-- Right Side - الخصومات -->
             <div class="right" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
-                <h2>
-                    Special <span class="highlight">Discounts</span> & <br />
-                    <span class="highlight">Promos</span>
-                </h2>
+                <h2 v-html="t('offer_heading')" :lang="locale"></h2>
                 <div class="underline"></div>
 
-                <div class="offer" v-for="(offer, index) in offers" :key="index" :data-aos="'fade-up'"
+                <div class="offer" v-for="(offer, index) in offersList" :key="index" :data-aos="'fade-up'"
                     :data-aos-delay="200 + index * 100" data-aos-duration="600">
                     <div class="offer-title">
                         <span class="icon">{{ offer.icon }}</span>
@@ -39,23 +36,11 @@
 </template>
 
 <script setup>
-const offers = [
-    {
-        icon: '🔥',
-        title: 'Family Discount',
-        description: 'Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet.',
-    },
-    {
-        icon: '🎓',
-        title: 'Student Discount',
-        description: 'Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet.',
-    },
-    {
-        icon: '🆕',
-        title: 'New Member Promotion',
-        description: 'Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet.',
-    },
-];
+import { useI18n } from "vue-i18n";
+import { computed } from "vue";
+
+const { t, locale, messages } = useI18n();
+const offersList = computed(() => messages.value[locale.value].offer_list);
 </script>
 
 <style scoped>
@@ -122,7 +107,7 @@ const offers = [
     margin-bottom: 0px;
 }
 
-.highlight {
+::v-deep(.highlight) {
     color: #c40514;
 }
 

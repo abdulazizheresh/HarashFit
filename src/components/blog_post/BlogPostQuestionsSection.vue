@@ -2,8 +2,8 @@
     <section class="questions-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up" data-aos-duration="600">
-                <h5>Contact Us</h5>
-                <h2>Still <span class="highlight">Have</span> Questions?</h2>
+                <h5 v-html="t('contact_us_small')"></h5>
+                <h2 v-html="t('contact_us_big')"></h2>
                 <div class="underline"></div>
             </div>
 
@@ -11,7 +11,7 @@
                 <div class="contact-card" v-for="(contact, index) in contacts" :key="index" data-aos="fade-up"
                     :data-aos-delay="index * 100" data-aos-duration="600">
                     <div class="text">
-                        <h4>{{ contact.title }}</h4>
+                        <h4 :lang="locale">{{ contact.title }}</h4>
                         <p>{{ contact.value }}</p>
                     </div>
                     <i :class="contact.icon"></i>
@@ -22,11 +22,15 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
+
 // جعلنا الكونتاكتس ستاتيكية ليست ديناميكية ولكن باستخدام v-for لتنظيم الكود أكثر
-const contacts = [
-    { title: "Phone Number", value: "+123 456 789", icon: "fas fa-phone-volume" },
-    { title: "E-mail", value: "bodyf@mail.com", icon: "fas fa-envelope" }
-];
+const contacts = computed(() => [
+  { title: t('contact_phone'), value: "+123 456 789", icon: "fas fa-phone-volume" },
+  { title: t('contact_email'), value: "bodyf@mail.com", icon: "fas fa-envelope" }
+]);
 </script>
 
 <style scoped>
@@ -59,7 +63,7 @@ const contacts = [
     font-weight: bold;
 }
 
-.highlight {
+::v-deep(.highlight) {
     color: #911f1f;
 }
 

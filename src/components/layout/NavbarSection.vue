@@ -6,38 +6,60 @@
             </RouterLink>
 
             <nav class="nav-links" :class="{ show: menuOpen }">
-                <RouterLink to="/" class="link" @click="menuOpen = false">Home</RouterLink>
-                <RouterLink to="/services" class="link" @click="menuOpen = false">Services</RouterLink>
-                <RouterLink to="/blog" class="link" @click="menuOpen = false">Blog</RouterLink>
-                <RouterLink to="/about" class="link" @click="menuOpen = false">About</RouterLink>
-                <RouterLink to="/contact" class="link" @click="menuOpen = false">Contact</RouterLink>
+                <RouterLink to="/" class="link" @click="menuOpen = false">{{ t('navbar_home') }}</RouterLink>
+                <RouterLink to="/services" class="link" @click="menuOpen = false">{{ t('navbar_services') }}
+                </RouterLink>
+                <RouterLink to="/blog" class="link" @click="menuOpen = false">{{ t('navbar_blog') }}</RouterLink>
+                <RouterLink to="/about" class="link" @click="menuOpen = false">{{ t('navbar_about') }}</RouterLink>
+                <RouterLink to="/contact" class="link" @click="menuOpen = false">{{ t('navbar_contact') }}</RouterLink>
 
-                <!-- يظهر فقط في الموبايل -->
-                <RouterLink to="/membership" class="membership-btn mobile-only" @click="menuOpen = false">
-                    Membership
+
+                <button class="lang-switch mobile-only" @click="toggleLanguage">
+                    {{ locale === 'ar' ? 'EN' : 'ع' }}
+                </button>
+
+                <RouterLink to="/plans" class="membership-btn mobile-only" @click="menuOpen = false">
+                    {{ t('navbar_membership') }}
                 </RouterLink>
             </nav>
 
-            <!-- هذا يظهر فقط في الشاشات الكبيرة -->
-            <RouterLink to="/membership" class="membership-btn desktop-only">
-                Membership
-            </RouterLink>
+            <div class="right-controls">
+                <button class="lang-switch desktop-only" @click="toggleLanguage">
+                    {{ locale === 'ar' ? 'EN' : 'ع' }}
+                </button>
+
+                <RouterLink to="/plans" class="membership-btn desktop-only">
+                    {{ t('navbar_membership') }}
+                </RouterLink>
+            </div>
+
+
 
             <div class="hamburger" @click="menuOpen = !menuOpen">
                 <span :class="{ open: menuOpen }"></span>
                 <span :class="{ open: menuOpen }"></span>
                 <span :class="{ open: menuOpen }"></span>
+
             </div>
         </div>
     </div>
 </template>
 
+
 <script setup>
+import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { ref, watch } from 'vue'
 
 const menuOpen = ref(false)
 const route = useRoute()
+
+const { t, locale } = useI18n()
+
+const toggleLanguage = () => {
+    locale.value = locale.value === 'ar' ? 'en' : 'ar'
+    localStorage.setItem('locale', locale.value);
+}
 
 watch(() => route.fullPath, () => {
     menuOpen.value = false
@@ -50,6 +72,7 @@ watch(() => route.fullPath, () => {
     display: flex;
     justify-content: center;
     margin-top: 40px;
+    margin: 20px 10px;
 }
 
 .navbar-container {
@@ -62,6 +85,34 @@ watch(() => route.fullPath, () => {
     align-items: center;
     justify-content: space-between;
     position: relative;
+}
+
+.right-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* زر اللغة */
+.lang-switch {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.lang-switch:hover {
+    background-color: #c40514;
+    border-color: #c40514;
+}
+
+
+.navbar-container:lang(ar) .nav-links {
+    flex-direction: row-reverse;
 }
 
 .logo {
@@ -98,18 +149,18 @@ watch(() => route.fullPath, () => {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 5px;
+    gap: 7px;
 }
 
 .hamburger span {
-    height: 3px;
+    height: 2px;
     width: 25px;
     background: white;
     transition: 0.3s;
 }
 
 .hamburger span.open:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
+    transform: rotate(47deg) translateY(8px);
 }
 
 .hamburger span.open:nth-child(2) {
@@ -117,7 +168,7 @@ watch(() => route.fullPath, () => {
 }
 
 .hamburger span.open:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
+    transform: rotate(-47deg) translateY(-8px);
 }
 
 /* Responsive */
@@ -166,7 +217,7 @@ watch(() => route.fullPath, () => {
 
     .mobile-only {
         display: inline-block;
-        margin-top: 10px;
+        margin-top: 7px;
     }
 
     .hamburger {

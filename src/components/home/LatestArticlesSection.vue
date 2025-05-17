@@ -1,9 +1,13 @@
 <template>
     <section class="latest-section">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">
-          Latest <span class="thin">Articles</span>
-        </h2>
+        <h2
+        class="section-title"
+        data-aos="fade-up"
+        v-html="t('latest_articles_title')"
+        :lang="locale"
+        ></h2>
+
         <div class="underline" data-aos="fade-up" data-aos-delay="50"></div>
   
         <div class="articles-grid">
@@ -19,7 +23,9 @@
           >
             <img :src="getImageUrl(article.image)" :alt="article.title" />
             <h3>{{ article.title }}</h3>
-            <RouterLink :to="`/blog/${article.id}`" class="more">More →</RouterLink>
+            <RouterLink :to="`/blog/${article.id}`" class="more">
+              {{ t('latest_articles_read_more') }}
+            </RouterLink>
           </div>
         </div>
   
@@ -32,7 +38,7 @@
           data-aos-duration="500"
           data-aos-easing="ease-out-cubic"
         >
-          View More
+        {{ t('latest_articles_view_more') }}
         </RouterLink>
       </div>
     </section>
@@ -40,6 +46,9 @@
   
   <script setup>
   import blogPosts from '@/data/BlogList.js';
+  import { useI18n } from "vue-i18n";
+
+const { t, locale } = useI18n();
   
   const getImageUrl = (fileName) => `/assets/images/${fileName}`;
   
@@ -67,7 +76,7 @@
     font-weight: bold;
   }
   
-  .section-title .thin {
+  ::v-deep(.section-title .thin) {
     font-weight: 400;
     color: #aaa;
   }

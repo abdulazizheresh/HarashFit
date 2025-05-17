@@ -1,37 +1,51 @@
 <template>
     <section class="wcu-section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">
-                Why Choose Us?
-            </h2>
+            <h2 class="section-title" v-html="t('wcu_title')" data-aos="fade-up"></h2>
             <div class="underline" data-aos="fade-up" data-aos-delay="50"></div>
 
             <div class="cards">
-                <div v-for="(item, index) in cards" :key="index" class="card" data-aos="fade-up"
+                <div v-for="(item, index) in translatedCards" :key="index" class="card" data-aos="fade-up"
                     :data-aos-delay="index * 100" data-aos-offset="50" data-aos-duration="500"
                     data-aos-easing="ease-out-cubic">
                     <div class="icon-wrapper">
                         <i :class="item.icon"></i>
                     </div>
-                    <h4 class="card-title">
-                        <span class="highlight">{{ item.highlight }}</span> {{ item.title }}
-                    </h4>
-                    <p class="card-description">
-                        Lorem ipsum dolor sit amet consectetur posuere vel
-                    </p>
+                    <h4 class="card-title" v-html="item.title" :lang="locale"></h4>
+                    <p class="card-description" :lang="locale">{{ item.description }}</p>
                 </div>
             </div>
         </div>
     </section>
 </template>
 
+
 <script setup>
-const cards = [
-    { icon: "fas fa-dumbbell", highlight: "Commitment", title: "to results" },
-    { icon: "fas fa-certificate", highlight: "Professional", title: "& Certified Trainer" },
-    { icon: "fas fa-layer-group", highlight: "Programs", title: "for All Levels" }
-];
+import { useI18n } from "vue-i18n";
+import { computed } from "vue";
+
+const { t, locale } = useI18n();
+
+// الحصول على البيانات حسب اللغة
+const translatedCards = computed(() => [
+    {
+        icon: "fas fa-dumbbell",
+        title: t("wcu_card_1_title"),
+        description: t("wcu_card_1_desc"),
+    },
+    {
+        icon: "fas fa-certificate",
+        title: t("wcu_card_2_title"),
+        description: t("wcu_card_2_desc"),
+    },
+    {
+        icon: "fas fa-layer-group",
+        title: t("wcu_card_3_title"),
+        description: t("wcu_card_3_desc"),
+    },
+]);
 </script>
+
 
 <style scoped>
 .wcu-section {

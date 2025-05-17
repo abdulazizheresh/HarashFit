@@ -2,39 +2,27 @@
     <section class="hero-section">
         <div class="hero-content">
             <div class="left">
-                <h1>
-                    Unite Your <span class="highlight">Body</span> And<br />
-                    Mind <span class="with">With</span> Harash<br />
-                    Fit
-                </h1>
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur. Volutpat viverra tellus in proin. Nulla nunc id orci
-                    condimentum.
-                </p>
+                <h1 v-html="t('hero_title')" :lang="locale"></h1>
+                <p class="description" :lang="locale">{{ t('hero_description') }}</p>
 
                 <div class="stats">
                     <div class="stat">
                         <h2>190+</h2>
-                        <p>Satisfied customer</p>
+                        <p>{{ t('stat_1') }}</p>
                     </div>
                     <div class="stat">
                         <h2>120+</h2>
-                        <p>Professional Trainer</p>
+                        <p>{{ t('stat_2') }}</p>
                     </div>
                 </div>
 
-                <!-- <div class="reviews">
-                    <div class="circles">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle plus">+</div>
-                    </div>
-                    <div class="stars">
-                        <strong>4.8/5</strong>
-                        <span class="stars-icons">★ ★ ★ ★ ★</span>
-                        <p>Based on 130 Reviews</p>
-                    </div>
-                </div> -->
+                <div class="cert-button-wrapper">
+                    <router-link to="/certifications" class="cert-button">
+                        <span class="icon">🎓</span>
+                        <span>{{ t('view_certifications') }}</span>
+                    </router-link>
+                </div>
+
             </div>
 
             <div class="right">
@@ -44,17 +32,17 @@
     </section>
 </template>
 
-<script>
-export default {
-    name: "HeroSection",
-};
+<script setup>
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
 </script>
 
 <style scoped>
 .hero-section {
-    padding: 80px 40px;
+
+    padding: 50px 40px;
     color: white;
-    min-height: calc(40vh - 100px); 
+    min-height: calc(40vh - 100px);
 }
 
 .hero-content {
@@ -81,6 +69,8 @@ export default {
 .hero-img {
     max-width: 100%;
     height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -90,77 +80,69 @@ h1 {
     margin-bottom: 24px;
 }
 
-.highlight {
+::v-deep(.highlight) {
     color: #ffffff;
 }
 
-.with {
+::v-deep(.with) {
     color: #c40514;
 }
 
 .description {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.4;
     margin-bottom: 32px;
+    color: #e0e0e0;
 }
 
 .stats {
     display: flex;
     gap: 40px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .stat h2 {
     font-size: 32px;
     margin: 0;
-    color: white;
+    color: #ff5555;
 }
 
 .stat p {
     margin: 0;
     color: #ccc;
-}
-
-.reviews {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.circles {
-    display: flex;
-}
-
-.circle {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #ddd;
-    margin-right: -8px;
-    border: 2px solid #000;
-}
-
-.plus {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #c40514;
-    color: white;
-    font-weight: bold;
-}
-
-.stars strong {
-    font-size: 18px;
-}
-
-.stars-icons {
-    color: gold;
-    margin-left: 8px;
-}
-
-.stars p {
-    margin: 4px 0 0;
     font-size: 14px;
-    color: #ccc;
+}
+
+/* زر الشهادات */
+.cert-button-wrapper {
+    margin-top: 47px;
+}
+
+.cert-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #c40514, #ff3c38);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 60, 56, 0.35);
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.cert-button:hover {
+    background: linear-gradient(90deg, #a30411, #380000);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.cert-button .icon {
+    font-size: 20px;
+    margin-top: 1px;
 }
 </style>

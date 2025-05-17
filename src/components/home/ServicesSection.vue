@@ -3,12 +3,8 @@
         <div class="container">
             <div class="header">
                 <div class="header-text" data-aos="fade-up">
-                    <h3>Our Services</h3>
-                    <h2>
-                        Best Services for a
-                        <span class="highlight">More <br> Active</span>,
-                        Healthy Life
-                    </h2>
+                    <h3 :lang="locale">{{ t('services_heading_small') }}</h3>
+                    <h2 v-html="t('services_heading_big')" :lang="locale"></h2>
                 </div>
             </div>
 
@@ -22,7 +18,7 @@
                     </h3>
                     <p>{{ service.description }}</p>
                     <RouterLink class="learn-more" :to="`/services/${service.id}`">
-                        Learn More
+                        {{ t('learn_more') }}
                     </RouterLink>
                 </div>
             </div>
@@ -31,7 +27,10 @@
 </template>
 
 <script setup>
+import { useI18n } from "vue-i18n";
 import servicesList from '@/data/ServicesList.js'
+
+const { t, locale } = useI18n();
 
 const services = servicesList.slice(0, 4).map((s) => {
     const words = s.title.split(' ')
@@ -83,7 +82,7 @@ const services = servicesList.slice(0, 4).map((s) => {
     line-height: 1.4;
 }
 
-.highlight {
+::v-deep(.highlight) {
     color: #c40514;
 }
 
@@ -147,7 +146,7 @@ const services = servicesList.slice(0, 4).map((s) => {
     background: #c40514;
     color: white;
     border: none;
-    width: 40%;
+    width: 30%;
     text-align: center;
     padding: 8px 18px;
     border-radius: 20px;

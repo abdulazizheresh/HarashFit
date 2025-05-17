@@ -5,22 +5,17 @@
             <div class="header">
                 <div class="title-area">
                     <div class="left-side" data-aos="fade-up" data-aos-duration="600">
-                        <h5>Our Services</h5>
-                        <h2>
-                            Best Services for a <span class="highlight">More <br />Active</span>, Healthy Life
-                        </h2>
+                        <h5 :lang="locale"> {{ t('our_services_heading_small') }} </h5>
+                        <h2 v-html="t('our_services_heading_big')" :lang="locale"></h2>
                         <div class="underline"></div>
                     </div>
 
                     <div class="right-side" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
-                        <p class="subtitle">
-                            Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet.
-                            Elementum ut lectus felis vitae sem risus.
-                        </p>
+                        <p  class="subtitle" :lang="locale">{{ t('our_services_description') }}</p>
                         <div class="small-underline"></div>
 
                         <button class="view-more" @click="showAll = !showAll">
-                            {{ showAll ? 'View Less' : 'View More' }}
+                            {{ showAll ? t('our_services_view_less') : t('our_services_view_more') }}
                         </button>
                     </div>
                 </div>
@@ -47,7 +42,10 @@
                         <span class="bold">{{ getFirstWord(service.title) }}</span> {{ getRestWords(service.title) }}
                     </h3>
                     <p>{{ service.description }}</p>
-                    <RouterLink :to="`/services/${service.id}`" class="learn-more">Learn More</RouterLink>                </div>
+                    <RouterLink :to="`/services/${service.id}`" class="learn-more">
+                        {{ t('our_services_learn_more') }}
+                    </RouterLink>   
+                </div>
             </div>
 
             <!-- الكروت الإضافية -->
@@ -65,7 +63,10 @@
                         <span class="bold">{{ getFirstWord(service.title) }}</span> {{ getRestWords(service.title) }}
                     </h3>
                     <p>{{ service.description }}</p>
-                    <RouterLink :to="`/services/${service.id}`" class="learn-more">Learn More</RouterLink>                </div>
+                    <RouterLink :to="`/services/${service.id}`" class="learn-more">
+                        {{ t('our_services_learn_more') }}
+                    </RouterLink>                
+                </div>
             </div>
         </div>
     </section>
@@ -75,6 +76,9 @@
 import servicesList from '@/data/ServicesList.js';
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
 
 const showAll = ref(false);
 
@@ -221,6 +225,7 @@ const getRestWords = (text) => text.split(' ').slice(1).join(' ');
     border-radius: 20px;
     font-weight: bold;
     width: 95px;
+    text-align: center;
     display: inline-block;
 }
 

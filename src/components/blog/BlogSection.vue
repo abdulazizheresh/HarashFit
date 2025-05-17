@@ -1,25 +1,23 @@
 <template>
     <section class="blog-hero">
-        <div class="blog-container">
-            <div class="blog-text">
-                <h1>Blog Archive</h1>
-                <p>
-                    Get Knowledge, Get <span class="red">Results</span> – The Best Articles for Maximum
-                    <span class="red">Performance!</span>
-                </p>
-            </div>
-            <div class="blog-image">
-                <img src="@/assets/images/home_1.png" alt="Blog Hero" />
-            </div>
+      <div class="blog-container">
+        <div class="blog-text" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
+          <h1 :lang="locale">{{ t('blog_hero_title') }}</h1>
+          <p v-html="t('blog_hero_text')" :lang="locale"></p>
         </div>
+        <div class="blog-image">
+          <img src="@/assets/images/home_1.png" alt="Blog Hero" />
+        </div>
+      </div>
     </section>
-</template>
+  </template>
+  
 
-<script>
-export default {
-    name: "BlogSection",
-};
-</script>
+  <script setup>
+  import { useI18n } from "vue-i18n";
+  const { t, locale } = useI18n();
+  </script>
+  
 
 <style scoped>
 .blog-hero {
@@ -55,7 +53,7 @@ export default {
     text-align: left;
 }
 
-.red {
+::v-deep(.red) {
     color: #c40514;
     font-weight: bold;
 }

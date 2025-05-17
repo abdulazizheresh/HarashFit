@@ -2,11 +2,8 @@
     <section class="membership-section">
         <div class="container">
             <div class="header" data-aos="fade-up" data-aos-duration="600">
-                <h5>Membership Plans</h5>
-                <h2>
-                    Unlimited <span class="highlight">Access</span> to the Fitness <br />
-                    You <span class="highlight">Want</span>!
-                </h2>
+                <h5 :lang="locale">{{ t('membership_heading_small') }}</h5>
+                <h2 v-html="t('membership_heading_big')" :lang="locale"></h2>
             </div>
 
             <div class="scroll-wrapper">
@@ -38,17 +35,26 @@
                             </li>
                         </ul>
 
-                        <button class="order-btn">Order now</button>
+                        <button class="order-btn">{{ t('membership_order_now') }}</button>
                     </div>
                 </div>
             </div>
+            <div class="show-more-wrapper" data-aos="fade-up" data-aos-delay="500">
+    <RouterLink to="/plans" class="show-more-btn">
+        {{ t('view_all_plans') }}
+    </RouterLink>
+</div>
         </div>
     </section>
 </template>
 
+
 <script setup>
+import { useI18n } from "vue-i18n";
 import PricePlanList from '@/data/MembershipsPlanList.js';
-const plans = PricePlanList;
+
+const { t, locale } = useI18n();
+const plans = PricePlanList.slice(0, 3);
 </script>
 
 <style scoped>
@@ -63,6 +69,26 @@ const plans = PricePlanList;
 .container {
     max-width: 1200px;
     margin: auto;
+}
+
+.show-more-wrapper {
+    text-align: center;
+    margin-top: 74px;
+}
+
+.show-more-btn {
+    background: black;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.show-more-btn:hover {
+    opacity: 0.85;
 }
 
 /* Header */
@@ -83,7 +109,7 @@ const plans = PricePlanList;
     line-height: 1.3;
 }
 
-.highlight {
+::v-deep(.highlight) {
     color: #c40514;
 }
 

@@ -2,10 +2,8 @@
     <section class="contact-hero">
         <div class="contact-container">
             <div class="contact-text">
-                <h1>Contact Us</h1>
-                <p>
-                    We are ready to help you with Fitness <span class="red">Principles!</span>
-                </p>
+                <h1 :lang="locale">{{ t('contact_hero_title') }}</h1>
+                <p v-html="t('contact_hero_paragraph')" :lang="locale"></p>
             </div>
             <div class="contact-image">
                 <img src="@/assets/images/home_1.png" alt="Contact Us" />
@@ -14,11 +12,12 @@
     </section>
 </template>
 
-<script>
-export default {
-    name: "ContactUsSection",
-};
+
+<script setup>
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
 </script>
+
 
 <style scoped>
 .contact-hero {
@@ -54,7 +53,7 @@ export default {
     text-align: left;
 }
 
-.red {
+::v-deep(.red) {
     color: #c40514;
     font-weight: bold;
 }

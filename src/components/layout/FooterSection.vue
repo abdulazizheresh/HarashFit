@@ -4,50 +4,59 @@
             <!-- Logo & Description -->
             <div class="footer-col">
                 <img src="@/assets/images/logo.png" alt="HarshFit" class="footer-logo" />
-                <p>
-                    Independent Fitness & Bodybuilding Coach — empowering clients through personalized training and real dedication.
-                </p>
-
+                <p :lang="locale">{{ t('footer_description') }}</p>
 
                 <hr class="divider" />
-                <h4>Contact Us</h4>
-                <p><strong>Phone Number</strong> | +962 7 9060 6181</p>
-                <p><strong>Email</strong> | baderharash@gmail.com</p>
+                <h4 :lang="locale">{{ t('footer_contact_us') }}</h4>
+                <div class="title-underline"></div>
+                <p><strong>{{ t('footer_phone') }}</strong></p>
+                <p><strong>{{ t('footer_email') }}</strong></p>
             </div>
 
             <!-- Quick Links -->
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h4 :lang="locale">{{ t('footer_links_title') }}</h4>
+                <div class="title-underline"></div>
                 <ul>
                     <li>
-                        <RouterLink to="/services">Services</RouterLink>
+                        <RouterLink to="/services">{{ t('footer_link_services') }}</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/blog">Blog Archive</RouterLink>
+                        <RouterLink to="/blog">{{ t('footer_link_blog') }}</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/about">About Us</RouterLink>
+                        <RouterLink to="/about">{{ t('footer_link_about') }}</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/contact">Our Team</RouterLink>
+                        <RouterLink to="/contact">{{ t('footer_link_team') }}</RouterLink>
                     </li>
                 </ul>
             </div>
 
             <!-- Location -->
             <div class="footer-col">
-                <h4>Our Location</h4>
-                <p>HarashFit</p>
-                <p>Talla Al Alli, Amman, Jordan</p>
+                <h4 :lang="locale">{{ t('footer_location_title') }}</h4>
+                <div class="title-underline"></div>
+                <p :lang="locale">HarashFit</p>
+                <p :lang="locale">Talla Al Alli, Amman, Jordan</p>
             </div>
 
             <!-- Hours -->
             <div class="footer-col">
-                <h4>Operating Hours</h4>
-                <p>Saturday - Wednesday | 08.00 - 17.00</p>
-                <p>Thursday | 08.00 - 14.00</p>
-                <p>Friday | Closed</p>
+                <h4 :lang="locale">{{ t('footer_hours_title') }}</h4>
+                <div class="title-underline"></div>
+                <p :lang="locale">{{ t('footer_hours_1') }}</p>
+                <p :lang="locale">{{ t('footer_hours_2') }}</p>
+                <p :lang="locale">{{ t('footer_hours_3') }}</p>
             </div>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="footer-legal">
+            <RouterLink to="/legal/privacy-policy">{{ t('footer_privacy') }}</RouterLink>
+            <RouterLink to="/legal/terms-and-conditions">{{ t('footer_terms') }}</RouterLink>
+            <RouterLink to="/legal/cookie-policy">{{ t('footer_cookies') }}</RouterLink>
+            <RouterLink to="/legal/impressum">{{ t('footer_impressum') }}</RouterLink>
         </div>
 
         <!-- Bottom Strip -->
@@ -58,23 +67,22 @@
                 <i class="fas fa-dumbbell"></i>
             </div>
             <p class="copyright">
-                © 2025 HarashFit. All rights reserved.
+                © 2025 HarashFit. {{ t('footer_rights') }}
             </p>
         </div>
     </footer>
 </template>
 
-<script>
-export default {
-    name: 'FooterSection',
-};
+<script setup>
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
 </script>
 
 <style scoped>
 .footer-section {
     background-color: #222;
     color: white;
-    padding: 60px 20px 7px;
+    padding: 50px 20px 7px;
 }
 
 .footer-container {
@@ -84,6 +92,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 40px;
+    margin-bottom: 22px;
 }
 
 .footer-col {
@@ -100,14 +109,11 @@ export default {
     font-size: 18px;
 }
 
-.footer-col h4::after {
-    content: "";
-    display: block;
+.title-underline {
     width: 40px;
     height: 2px;
     background-color: #c40514;
-    margin-top: 8px;
-    margin-bottom: 16px;
+    margin: 10px 0 12px;
 }
 
 .divider {
@@ -116,11 +122,6 @@ export default {
     background-color: #222;
     margin: 8px 0 16px;
     border: none;
-}
-
-.divider h4{
-    margin-bottom: 10px;
-    padding: 10px;
 }
 
 .footer-col p,
@@ -150,9 +151,31 @@ export default {
     text-decoration: underline;
 }
 
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    border-top: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.footer-legal a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
 .footer-bottom {
     border-top: 1px solid white;
-    padding-top: 20px;
+    padding-top: 25px;
     text-align: center;
 }
 

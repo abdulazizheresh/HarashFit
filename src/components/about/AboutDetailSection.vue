@@ -1,61 +1,75 @@
 <template>
     <section class="about-detail-section">
-        <div class="container">
-            <div class="left" data-aos="fade-up" data-aos-duration="600">
-                <div class="image-grid">
-                    <div class="grid-item" v-for="i in 6" :key="i"></div>
-                </div>
-            </div>
-
-            <div class="right" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
-                <h5>About Us</h5>
-                <h2>
-                    Innovation Focused on Your <span class="highlight">Comfort</span>
-                </h2>
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet.
-                    Elementum ut lectus felis vitae sem risus. Auctor neque non elementum suspendisse dictum ac.
-                    Quam eu nec eu suspendisse nulla eu habitant odio.
-                </p>
-
-                <div class="stats">
-                    <div class="stat" v-for="(stat, index) in stats" :key="index" data-aos="fade-up"
-                        :data-aos-delay="150 + index * 100" data-aos-duration="600">
-                        <h3>{{ stat.number }}<span>+</span></h3>
-                        <p>{{ stat.label }}</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="left" data-aos="fade-up" data-aos-duration="600">
+          <div class="image-grid">
+            <div class="grid-item" v-for="i in 6" :key="i"></div>
+          </div>
         </div>
-
-        <!-- Features Bar -->
-        <div class="features-bar">
-            <div class="feature-item" v-for="(feature, index) in features" :key="index" data-aos="fade-up"
-                :data-aos-delay="index * 100" data-aos-duration="600">
-                <i :class="feature.icon"></i>
-                <span>{{ feature.text }}</span>
+  
+        <div class="right" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
+          <h5 :lang="locale">{{ t('about_detail_title_small') }}</h5>
+          <h2 v-html="t('about_detail_title_big')" :lang="locale"></h2>
+  
+          <p class="description" :lang="locale">{{ t('about_detail_paragraph') }}</p>
+  
+          <div class="stats">
+            <div
+              class="stat"
+              v-for="(stat, index) in translatedStats"
+              :key="index"
+              data-aos="fade-up"
+              :data-aos-delay="150 + index * 100"
+              data-aos-duration="600"
+            >
+              <h3>{{ stat.number }}<span>+</span></h3>
+              <p>{{ stat.label }}</p>
             </div>
+          </div>
         </div>
+      </div>
+  
+      <!-- Features Bar -->
+      <div class="features-bar">
+        <div
+          class="feature-item"
+          v-for="(feature, index) in translatedFeatures"
+          :key="index"
+          data-aos="fade-up"
+          :data-aos-delay="index * 100"
+          data-aos-duration="600"
+        >
+          <i :class="feature.icon"></i>
+          <span :lang="locale">{{ feature.text }}</span>
+        </div>
+      </div>
     </section>
-</template>
+  </template>
+  
 
 <script setup>
-const stats = [
-    { number: 190, label: "Years of Excellence" },
-    { number: 10, label: "Members" },
-    { number: 20, label: "Weekly Classes" },
-    { number: 120, label: "Expert Trainers" },
-];
+import { useI18n } from 'vue-i18n';
+import { computed } from 'vue';
 
-const features = [
-    { icon: 'fas fa-dumbbell', text: 'Expert Trainers' },
-    { icon: 'fas fa-apple-alt', text: 'Nutrition Guidance' },
-    { icon: 'fas fa-gem', text: 'Premium Membership' },
-    { icon: 'fas fa-chart-line', text: 'Progress Tracking' },
-    { icon: 'fas fa-users', text: 'Community Support' },
-    { icon: 'fas fa-star', text: 'Next-level' },
-];
+const { t, locale } = useI18n();
+
+const translatedStats = computed(() => [
+  { number: 190, label: t('about_detail_stat_1') },
+  { number: 10, label: t('about_detail_stat_2') },
+  { number: 20, label: t('about_detail_stat_3') },
+  { number: 120, label: t('about_detail_stat_4') },
+]);
+
+const translatedFeatures = computed(() => [
+  { icon: 'fas fa-dumbbell', text: t('about_detail_feature_1') },
+  { icon: 'fas fa-apple-alt', text: t('about_detail_feature_2') },
+  { icon: 'fas fa-gem', text: t('about_detail_feature_3') },
+  { icon: 'fas fa-chart-line', text: t('about_detail_feature_4') },
+  { icon: 'fas fa-users', text: t('about_detail_feature_5') },
+  { icon: 'fas fa-star', text: t('about_detail_feature_6') },
+]);
 </script>
+
 
 <style scoped>
 .about-detail-section {
@@ -116,7 +130,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-.highlight {
+::v-deep(.highlight) {
     color: #911f1f;
 }
 

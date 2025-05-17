@@ -5,22 +5,22 @@
                 <div class="info-block">
                     <div class="icon-title">
                         <i class="fas fa-map-marker-alt"></i>
-                        <h3>Our Location</h3>
+                        <h3 :lang="locale">{{ t('contact_info_location_title') }}</h3>
                     </div>
                     <div class="underline"></div>
-                    <p class="bold">Body Fusion Gym</p>
-                    <p>Jl. Kebugaran No. 21, Jakarta Selatan, Indonesia</p>
+                    <p class="bold" :lang="locale">{{ t('contact_info_location_name') }}</p>
+                    <p :lang="locale">{{ t('contact_info_location_address') }}</p>
                 </div>
 
                 <div class="info-block" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-title">
                         <i class="fas fa-clock"></i>
-                        <h3>Operating Hours</h3>
+                        <h3 :lang="locale">{{ t('contact_info_hours_title') }}</h3>
                     </div>
                     <div class="underline"></div>
-                    <p><span class="bold">Monday - Friday</span> | 08.00 - 22.00 pm</p>
-                    <p><span class="bold">Saturday</span> | 08.00 - 23.00 pm</p>
-                    <p><span class="bold">Sunday</span> | 07.00 - 23.00 pm</p>
+                    <p :lang="locale"><span class="bold">{{ t('contact_info_hours_weekdays') }}</span></p>
+                    <p :lang="locale"><span class="bold">{{ t('contact_info_hours_thursday') }}</span></p>
+                    <p :lang="locale"><span class="bold">{{ t('contact_info_hours_friday') }}</span></p>
                 </div>
             </div>
 
@@ -28,17 +28,17 @@
                 <div class="info-block">
                     <div class="icon-title">
                         <i class="fas fa-phone-volume"></i>
-                        <h3>Contact Us</h3>
+                        <h3 :lang="locale">{{ t('contact_info_contact_title') }}</h3>
                     </div>
                     <div class="underline"></div>
-                    <p><span class="bold">Phone Number</span> | +123 456 789</p>
-                    <p><span class="bold">Email</span> | bodyf@mail.com</p>
+                    <p><span class="bold">{{ t('contact_info_phone') }}</span></p>
+                    <p><span class="bold">{{ t('contact_info_email') }}</span></p>
                 </div>
 
                 <div class="info-block" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon-title">
                         <i class="fas fa-user-plus"></i>
-                        <h3>Connect With Us</h3>
+                        <h3 :lang="locale">{{ t('contact_info_connect_title') }}</h3>
                     </div>
                     <div class="underline"></div>
                     <div class="social-links">
@@ -58,8 +58,10 @@
     </section>
 </template>
 
+
 <script setup>
-// لا نحتاج أي سكريبت إضافي هنا
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
 </script>
 
 <style scoped>
@@ -113,7 +115,7 @@
     width: 100px;
     height: 2px;
     background: #911f1f;
-    margin: 10px 0 20px;
+    margin: -10px 0px 27px;
 }
 
 .bold {
@@ -157,5 +159,4 @@ p {
         max-width: 370px;
     }
 }
-
 </style>

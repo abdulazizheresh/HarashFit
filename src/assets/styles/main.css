@@ -1,0 +1,13 @@
+[lang="ar"] {
+    direction: rtl;
+    text-align: left;
+    align-items: left;
+}
+
+
+/* .rtl-text {
+    direction: rtl !important;
+    text-align: flex-start !important;
+    align-items: flex-start
+
+} */

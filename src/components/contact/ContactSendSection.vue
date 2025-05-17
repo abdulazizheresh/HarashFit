@@ -2,31 +2,31 @@
     <section class="contact-send-section">
         <div class="container">
             <div class="form-side" data-aos="fade-up" data-aos-duration="600">
-                <h2>Get In Touch</h2>
+                <h2 :lang="locale" v-html="t('contact_form_title')"></h2>
                 <div class="underline"></div>
 
                 <form class="contact-form">
                     <div class="input-group">
-                        <input type="text" placeholder="Your Name" />
+                        <input type="text" :placeholder="t('contact_form_name')" dir="auto" />
                         <i class="fas fa-user"></i>
                     </div>
 
                     <div class="input-group">
-                        <input type="email" placeholder="Your Email" />
+                        <input type="email" :placeholder="t('contact_form_email')" dir="auto"/>
                         <i class="fas fa-envelope"></i>
                     </div>
 
                     <div class="input-group">
-                        <input type="text" placeholder="Phone Number" />
+                        <input type="text" :placeholder="t('contact_form_phone')" dir="auto"/>
                         <i class="fas fa-phone"></i>
                     </div>
 
                     <div class="input-group">
-                        <textarea placeholder="Message"></textarea>
+                        <textarea :lang="locale" :placeholder="t('contact_form_message')" dir="auto"></textarea>
                         <i class="fas fa-comment" style="opacity: 0;"></i>
                     </div>
 
-                    <button type="submit">Send</button>
+                    <button type="submit">{{ t('contact_form_send') }}</button>
                 </form>
             </div>
 
@@ -39,9 +39,13 @@
     </section>
 </template>
 
+
 <script setup>
-// لا نحتاج سكريبت خاص هنا
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
 </script>
+
 
 <style scoped>
 .contact-send-section {

@@ -2,11 +2,8 @@
     <section class="about-hero">
         <div class="about-container">
             <div class="about-text">
-                <h1>About</h1>
-                <p>
-                    Transform Your <span class="red">Body</span>, Elevate Your
-                    <span class="red">Life!</span>
-                </p>
+                <h1 v-html="t('about_title')" :lang="locale"></h1>
+                <p v-html="t('about_subtitle')" :lang="locale"></p>
             </div>
             <div class="about-image">
                 <img src="@/assets/images/home_1.png" alt="About Us" />
@@ -15,10 +12,10 @@
     </section>
 </template>
 
-<script>
-export default {
-    name: "AboutUsSection",
-};
+
+<script setup>
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
 </script>
 
 <style scoped>
@@ -55,7 +52,7 @@ export default {
     text-align: left;
 }
 
-.red {
+::v-deep(.red) {
     color: #c40514;
     font-weight: bold;
 }

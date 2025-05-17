@@ -2,11 +2,8 @@
     <section class="services-hero">
         <div class="services-container">
             <div class="services-text">
-                <h1>Services</h1>
-                <p>
-                    <span class="red">Transform </span> Your Body with the 
-                    <span class="red">Best </span> Service!
-                </p>
+                <h1 :lang="locale">{{ t('services_hero_title') }}</h1>
+                <p v-html="t('services_hero_text')" :lang="locale"></p>
             </div>
             <div class="services-image">
                 <img src="@/assets/images/home_1.png" alt="Services" />
@@ -15,10 +12,9 @@
     </section>
 </template>
 
-<script>
-export default {
-    name: "servicesUsSection",
-};
+<script setup>
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
 </script>
 
 <style scoped>
@@ -55,7 +51,7 @@ export default {
     text-align: left;
 }
 
-.red {
+::v-deep(.red) {
     color: #c40514;
     font-weight: bold;
 }

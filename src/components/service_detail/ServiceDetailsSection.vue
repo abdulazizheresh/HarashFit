@@ -1,6 +1,6 @@
 <template>
-<section class="service-detail-hero">
-    <div class="hero-images-grid" data-aos="fade-up" data-aos-delay="100">
+    <section class="service-detail-hero">
+        <div class="hero-images-grid" data-aos="fade-up" data-aos-delay="100">
             <img v-for="(s, i) in servicesList.slice(0, 4)" :key="i" :src="s.image" :alt="s.title" />
         </div>
         <div class="hero-box" data-aos="fade-up" data-aos-delay="200">
@@ -8,8 +8,8 @@
                 <span class="highlight">{{ service.title.split(' ')[0] }}</span>
                 {{ service.title.split(' ').slice(1).join(' ') }} – Body Fusion
             </h1>
-            <h4>"Burn Fat, Build Healthy Habits!"</h4>
-            <p>{{ service.description }}</p>
+            <h4 :lang="locale">{{ t('service_details_subtitle') }}</h4>
+            <p :lang="locale">{{ service.description }}</p>
         </div>
     </section>
 
@@ -26,9 +26,11 @@
                     <p>{{ service.description }}</p>
                 </div> -->
 
-                <h2 class="benefits-title" data-aos="fade-up" data-aos-delay="300">Benefits of this Program</h2>
-                <div v-for="(section, i) in service.benefits" :key="i" class="benefit-section"   :data-aos="'fade-up'"
-                :data-aos-delay="200 + i * 50">
+                <h2 class="benefits-title" data-aos="fade-up" data-aos-delay="300">
+                    {{ t('service_details_benefits_title') }}
+                </h2>
+                <div v-for="(section, i) in service.benefits" :key="i" class="benefit-section" :data-aos="'fade-up'"
+                    :data-aos-delay="200 + i * 50">
                     <h3 class="section-title">{{ section.sectionTitle }}</h3>
                     <ul>
                         <li v-for="(point, j) in section.points" :key="j">
@@ -37,7 +39,7 @@
                     </ul>
                 </div>
 
-                <div class="video-box"  data-aos="fade-up" data-aos-delay="200">
+                <div class="video-box" data-aos="fade-up" data-aos-delay="200">
                     <div>
                         <h4>{{ service.title }} – Body Fusion</h4>
                         <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -51,7 +53,7 @@
             <!-- Right Sidebar -->
             <div class="right">
                 <div class="widget" data-aos="fade-up" data-aos-delay="100">
-                    <h4>Operating hours</h4>
+                    <h4 :lang="locale">{{ t('service_details_operating_hours') }}</h4>
                     <ul>
                         <li v-for="(item, index) in service.schedule" :key="index">
                             <i class="fas fa-clock"></i> {{ item.day }} | {{ item.hours }}
@@ -60,7 +62,7 @@
                 </div>
 
                 <div class="widget" data-aos="fade-up" data-aos-delay="100">
-                    <h4>All Services</h4>
+                    <h4 :lang="locale">{{ t('service_details_all_services') }}</h4>
                     <ul>
                         <li v-for="s in allServices" :key="s.id">
                             <RouterLink :to="`/services/${s.id}`">{{ s.title }} <i class="fas fa-arrow-right"></i>
@@ -70,17 +72,17 @@
                 </div>
 
                 <div class="widget" data-aos="fade-up" data-aos-delay="100">
-                    <h4>Membership Join</h4>
+                    <h4 :lang="locale">{{ t('service_details_membership_join') }}</h4>
                     <form>
-                        <input type="text" placeholder="Your Name" />
-                        <input type="email" placeholder="Your Email" />
-                        <input type="tel" placeholder="Phone Number" />
+                        <input type="text" :placeholder="t('service_details_join_name')" :lang="locale" />
+                        <input type="email" :placeholder="t('service_details_join_email')" :lang="locale" />
+                        <input type="tel" :placeholder="t('service_details_join_phone')" :lang="locale" />
                         <select>
-                            <option>Membership Plan</option>
-                            <option>Basic</option>
-                            <option>Premium</option>
+                            <option :lang="locale">{{ t('service_details_join_plan') }}</option>
+                            <option :lang="locale">{{ t('service_details_join_plan_basic') }}</option>
+                            <option :lang="locale">{{ t('service_details_join_plan_premium') }}</option>
                         </select>
-                        <button type="submit">Join</button>
+                        <button type="submit">{{ t('service_details_join_submit') }}</button>
                     </form>
                 </div>
             </div>
@@ -92,14 +94,17 @@
 import { useRoute } from 'vue-router';
 import { ref, watchEffect } from 'vue';
 import servicesList from '@/data/ServicesList.js';
+import { useI18n } from "vue-i18n";
+
+const { t, locale } = useI18n();
 
 const route = useRoute();
 const service = ref(null);
 const allServices = servicesList;
 
 watchEffect(() => {
-  const id = parseInt(route.params.id);
-  service.value = servicesList.find(s => s.id === id);
+    const id = parseInt(route.params.id);
+    service.value = servicesList.find(s => s.id === id);
 });
 
 
@@ -107,15 +112,15 @@ watchEffect(() => {
 
 <style scoped>
 .service-detail-hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 40px;
-  padding: 50px;
-  margin-bottom: -7px;
-  /* padding-bottom: -15px; */
-  background: linear-gradient(to top, #810810, #000000 120%);
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 50px;
+    margin-bottom: -7px;
+    /* padding-bottom: -15px; */
+    background: linear-gradient(to top, #810810, #000000 120%);
+    flex-wrap: wrap;
 }
 
 
@@ -146,7 +151,7 @@ watchEffect(() => {
     color: #cfc6b8;
 }
 
-.hero-box .highlight {
+::v-deep(.hero-box .highlight) {
     color: #c40514;
 }
 
@@ -295,12 +300,12 @@ watchEffect(() => {
 }
 
 .widget ul li a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .widget ul li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 
@@ -315,7 +320,7 @@ watchEffect(() => {
         padding: 20px;
         margin-top: -29px;
     }
-    
+
     .container {
         flex-direction: column;
     }
