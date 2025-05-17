@@ -19,7 +19,6 @@ export default {
   components: {
     NavbarSection,
     FooterSection,
-    CookieConsent
   }
 };
 </script>
