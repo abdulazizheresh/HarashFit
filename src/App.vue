@@ -4,7 +4,7 @@
 
     <v-main class="main-content">
       <router-view />
-    <CookieConsent />
+    <!-- <CookieConsent /> -->
 
     </v-main>
 
@@ -16,7 +16,7 @@
 <script setup>
 import NavbarSection from "@/components/layout/NavbarSection.vue";
 import FooterSection from "@/components/layout/FooterSection.vue";
-import CookieConsent from "@/components/CookieConsent.vue";
+// import CookieConsent from "@/components/CookieConsent.vue";
 </script>
 
 <style>
