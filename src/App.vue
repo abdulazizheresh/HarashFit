@@ -8,6 +8,7 @@
     </v-main>
 
     <FooterSection />
+
   </v-app>
 </template>
 
