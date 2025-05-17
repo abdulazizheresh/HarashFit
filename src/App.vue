@@ -4,18 +4,26 @@
 
     <v-main class="main-content">
       <router-view />
-    <FooterSection />
-    <CookieConsent/>
     </v-main>
 
-
+    <FooterSection />
+    <CookieConsent/>
   </v-app>
 </template>
 
-<script setup>
+<script>
 import NavbarSection from "@/components/layout/NavbarSection.vue";
 import FooterSection from "@/components/layout/FooterSection.vue";
 import CookieConsent from "@/components/CookieConsent.vue";
+
+export default {
+  name: "App",
+  components: {
+    NavbarSection,
+    FooterSection,
+    CookieConsent
+  }
+};
 </script>
 
 <style>
