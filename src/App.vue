@@ -1,13 +1,11 @@
-<template>
-  <v-app class="app-container">
-    <NavbarSection />
-
-    <v-main class="main-content">
-      <router-view />
-    <CookieConsent/>
-    </v-main>
-
-    <FooterSection />
+<template>  
+  <v-app class="app-container">    
+    <NavbarSection />    
+    <v-main class="main-content">      
+      <router-view />    
+      <CookieConsent/>    
+    </v-main>    
+    <FooterSection />  
   </v-app>
 </template>
 
@@ -38,7 +36,6 @@ html, body, #app {
   display: flex;
   flex-direction: column;
   align-content: center;
-
   background: linear-gradient(to bottom, #000000, #810810);
   background-attachment: fixed;
   background-size: cover;
@@ -48,6 +45,13 @@ html, body, #app {
 .main-content {
   flex: 1;
   position: relative;
-  z-index: 1
+  z-index: 1;
+}
+
+/* إضافة نمط لضمان رؤية الـ footer */
+footer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 </style>
