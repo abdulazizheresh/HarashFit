@@ -7,14 +7,12 @@
     </v-main>
 
     <FooterSection />
-    <CookieConsent/>
   </v-app>
 </template>
 
 <script>
 import NavbarSection from "@/components/layout/NavbarSection.vue";
 import FooterSection from "@/components/layout/FooterSection.vue";
-import CookieConsent from "@/components/CookieConsent.vue";
 
 export default {
   name: "App",
@@ -47,7 +45,5 @@ html, body, #app {
 
 .main-content {
   flex: 1;
-  position: relative;
-  z-index: 1
 }
 </style>
