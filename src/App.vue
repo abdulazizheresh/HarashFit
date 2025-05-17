@@ -4,6 +4,7 @@
 
     <v-main class="main-content">
       <router-view />
+    <CookieConsent/>
     </v-main>
 
     <FooterSection />
@@ -13,12 +14,14 @@
 <script>
 import NavbarSection from "@/components/layout/NavbarSection.vue";
 import FooterSection from "@/components/layout/FooterSection.vue";
+import CookieConsent from "@/components/CookieConsent.vue";
 
 export default {
   name: "App",
   components: {
     NavbarSection,
     FooterSection,
+    CookieConsent
   }
 };
 </script>
@@ -44,5 +47,7 @@ html, body, #app {
 
 .main-content {
   flex: 1;
+  position: relative;
+  z-index: 1
 }
 </style>
