@@ -4,7 +4,8 @@
 
     <v-main class="main-content">
       <router-view />
-      <CookieConsent />
+    <CookieConsent />
+
     </v-main>
 
     <FooterSection />
@@ -39,5 +40,7 @@ html, body, #app {
 
 .main-content {
   flex: 1;
+  position: relative;
+  z-index: 1
 }
 </style>
