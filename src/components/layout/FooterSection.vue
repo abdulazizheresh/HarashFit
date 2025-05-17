@@ -3,7 +3,7 @@
         <div class="footer-container">
             <!-- Logo & Description -->
             <div class="footer-col">
-                <img src="@/assets/images/logo.png" alt="HarshFit" class="footer-logo" />
+                <img src="/assets/images/logo.png" alt="HarshFit" class="footer-logo" />
                 <p :lang="locale">{{ t('footer_description') }}</p>
 
                 <hr class="divider" />
