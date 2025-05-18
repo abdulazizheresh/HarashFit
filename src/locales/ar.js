@@ -30,20 +30,20 @@ export default {
         title: "الشهادات",
         cert_1_date: "انتهاء الصلاحية: 26/09/2026",
         cert_1_desc: "شهادة تؤهلك لتقديم برامج تدريب شخصية باحترافية دولية (NASM).",
-      
+
         cert_2_date: "تم الإنجاز: 02/01/2025",
         cert_2_desc: "تخصص احترافي في بناء الأجسام باستخدام أسس علمية حديثة.",
-      
+
         cert_3_date: "تم الإنجاز: 16/01/2025",
         cert_3_desc: "تدريب النساء وفق احتياجاتهن البدنية والهرمونية.",
-      
+
         cert_4_date: "تم الإنجاز: 18/01/2025",
         cert_4_desc: "برامج مدروسة وآمنة لفقدان الوزن بدعم علمي.",
-      
+
         cert_5_date: "تم الإنجاز: 08/10/2024",
         cert_5_desc: "تنمية الصلابة الذهنية والانضباط الذاتي في التدريب.",
-      },
-      
+    },
+
 
 
     // Services Screen (Services Section)
@@ -89,13 +89,13 @@ export default {
 
     // Plans Screen (Plans Views Section)
 
-  plans_view_plans_heading: "خطط الاشتراك",
-  plans_view_plans_subheading: "اختر الخطة المناسبة لهدفك",
-  plans_view_monthly: "شهري",
-  plans_view_yearly: "سنوي",
-  plans_view_one_time: "لمرة واحدة",
-  plans_view_most_popular: "الأكثر شهرة",
-  plans_view_order_now: "اطلب الآن",
+    plans_view_plans_heading: "خطط الاشتراك",
+    plans_view_plans_subheading: "اختر الخطة المناسبة لهدفك",
+    plans_view_monthly: "شهري",
+    plans_view_yearly: "سنوي",
+    plans_view_one_time: "لمرة واحدة",
+    plans_view_most_popular: "الأكثر شهرة",
+    plans_view_order_now: "اطلب الآن",
 
     // Service Details Screen (Service Details Section)
     service_details_subtitle: "احرق الدهون وابدأ عادات صحية!",
@@ -185,7 +185,7 @@ export default {
     contact_info_contact_title: "اتصل بنا",
 
     contact_info_phone: "+962 7 9060 6181 :رقم الهاتف",
-    contact_info_email: "baderharash@gmail.com :البريد الإلكتروني",
+    contact_info_email: "Email : baderharash{'@'}gmail.com :البريد الإلكتروني",
 
     contact_info_connect_title: "تواصل معنا",
 
@@ -201,7 +201,7 @@ export default {
     footer_description: "مدرب مستقل للياقة وكمال الأجسام — يُمكّن العملاء من خلال تدريب مخصص والتزام حقيقي.",
     footer_contact_us: "اتصل بنا",
     footer_phone: "+962 7 9060 6181 :رقم الهاتف",
-    footer_email: "baderharash@gmail.com :البريد الإلكتروني",
+    footer_email: "Email : baderharash{'@'}gmail.com :البريد الإلكتروني",
     footer_links_title: "روابط سريعة",
     footer_link_services: "الخدمات",
     footer_link_blog: "أرشيف المقالات",
@@ -212,16 +212,16 @@ export default {
     footer_hours_1: "السبت - الأربعاء : 08.00 - 17.00",
     footer_hours_2: "الخميس : 08.00 - 14.00",
     footer_hours_3: "الجمعة : مغلق",
-    "footer_privacy": "سياسة الخصوصية",
-"footer_terms": "الشروط والأحكام",
-"footer_cookies": "سياسة ملفات تعريف الارتباط",
-"footer_impressum": "الإشعار القانوني",
+    footer_privacy: "سياسة الخصوصية",
+    footer_terms: "الشروط والأحكام",
+    footer_cookies: "سياسة ملفات تعريف الارتباط",
+    footer_impressum: "الإشعار القانوني",
     footer_rights: "جميع الحقوق محفوظة.",
 
     "cookie": {
-  "message": "نستخدم ملفات تعريف الارتباط لتحسين تجربتك.",
-  "learn_more": "اعرف المزيد",
-  "accept": "موافقة",
-  "reject": "رفض"
-}
+        "message": "نستخدم ملفات تعريف الارتباط لتحسين تجربتك.",
+        "learn_more": "اعرف المزيد",
+        "accept": "موافقة",
+        "reject": "رفض"
+    }
 };

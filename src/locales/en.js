@@ -31,19 +31,19 @@ export default {
         title: "Certifications",
         cert_1_date: "Exp: 09/26/2026",
         cert_1_desc: "Certification for delivering professional personal training programs (NASM).",
-      
+
         cert_2_date: "Completed: 01/02/2025",
         cert_2_desc: "Professional specialization in bodybuilding and physique transformation.",
-      
+
         cert_3_date: "Completed: 01/16/2025",
         cert_3_desc: "Specialized in training women based on their physical and hormonal needs.",
-      
+
         cert_4_date: "Completed: 01/18/2025",
         cert_4_desc: "Focus on safe, data-driven weight loss programs.",
-      
+
         cert_5_date: "Completed: 10/08/2024",
         cert_5_desc: "Mental strength and discipline in training.",
-      },
+    },
 
     // Services Screen (Services Section)
     services_hero_title: "Services",
@@ -86,14 +86,14 @@ export default {
     membership_order_now: "Order now",
     view_all_plans: "View All Plans",
 
-        // Plans Screen (Plans Views Section)
-        plans_view_plans_heading: "Subscription Plans",
-        plans_view_plans_subheading: "Choose the plan that fits your goals",
-        plans_view_monthly: "Monthly",
-        plans_view_yearly: "Yearly",
-        plans_view_one_time: "One-Time",
-        plans_view_most_popular: "Most Popular",
-        plans_view_order_now: "Order Now",
+    // Plans Screen (Plans Views Section)
+    plans_view_plans_heading: "Subscription Plans",
+    plans_view_plans_subheading: "Choose the plan that fits your goals",
+    plans_view_monthly: "Monthly",
+    plans_view_yearly: "Yearly",
+    plans_view_one_time: "One-Time",
+    plans_view_most_popular: "Most Popular",
+    plans_view_order_now: "Order Now",
 
 
     // Service Details Screen (Service Details Section)
@@ -146,10 +146,10 @@ export default {
     wcu_card_3_title: "<span class='highlight'>Programs</span> for All Levels",
     wcu_card_3_desc: "Lorem ipsum dolor sit amet consectetur posuere vel",
 
-        // About Screen (About Certificates Section)
-        certifications_heading: "My Certifications",
-        certifications_text: "As a certified personal trainer, I hold several international certifications from NASM and other reputable institutions — ensuring you high-quality, safe, and effective training.",
-        view_all_certifications: "View All Certifications",
+    // About Screen (About Certificates Section)
+    certifications_heading: "My Certifications",
+    certifications_text: "As a certified personal trainer, I hold several international certifications from NASM and other reputable institutions — ensuring you high-quality, safe, and effective training.",
+    view_all_certifications: "View All Certifications",
 
     // About Screen (About Details Section
     about_detail_title_small: "About Us",
@@ -184,7 +184,7 @@ export default {
     contact_info_contact_title: "Contact Us",
 
     contact_info_phone: "Phone Number: +962 7 9060 6181",
-    contact_info_email: "Email: baderharash@gmail.com",
+    contact_info_email: "Email : baderharash{'@'}gmail.com",
 
     contact_info_connect_title: "Connect With Us",
 
@@ -199,8 +199,8 @@ export default {
     // Footer Section
     footer_description: "Independent Fitness & Bodybuilding Coach — empowering clients through personalized training and real dedication.",
     footer_contact_us: "Contact Us",
-    footer_phone: "Phone Number: +962 7 9060 6181",
-    footer_email: "Email: baderharash@gmail.com",
+    footer_phone: "Phone Number : +962 7 9060 6181",
+    footer_email: "Email : baderharash{'@'}gmail.com",
     footer_links_title: "Quick Links",
     footer_link_services: "Services",
     footer_link_blog: "Blog Archive",
@@ -211,16 +211,16 @@ export default {
     footer_hours_1: "Saturday - Wednesday : 08:00AM - 5:00PM",
     footer_hours_2: "Thursday : 08:00AM - 2:00PM",
     footer_hours_3: "Friday : Closed",
-    "footer_privacy": "Privacy Policy",
-"footer_terms": "Terms & Conditions",
-"footer_cookies": "Cookie Policy",
-"footer_impressum": "Impressum",
+    footer_privacy: "Privacy Policy",
+    footer_terms: "Terms & Conditions",
+    footer_cookies: "Cookie Policy",
+    footer_impressum: "Impressum",
     footer_rights: "All rights reserved.",
 
     "cookie": {
-  "message": "We use cookies to improve your experience.",
-  "learn_more": "Learn more",
-  "accept": "Accept",
-  "reject": "Reject"
-}
+        "message": "We use cookies to improve your experience.",
+        "learn_more": "Learn more",
+        "accept": "Accept",
+        "reject": "Reject"
+    }
 };

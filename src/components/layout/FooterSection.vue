@@ -3,13 +3,13 @@
         <div class="footer-container">
             <!-- Logo & Description -->
             <div class="footer-col">
-                <img :src="require('@/assets/images/logo.png')" alt="HarshFit" class="footer-logo" />
+                <img :src="logo" alt="Logo" class="footer-logo" />
                 <p :lang="locale">{{ t('footer_description') }}</p>
 
                 <hr class="divider" />
                 <h4 :lang="locale">{{ t('footer_contact_us') }}</h4>
                 <div class="title-underline"></div>
-                <p><strong>{{ t('footer_phone') }}</strong></p>
+                <p :lang="locale"><strong>{{ t('footer_phone') }}</strong></p>
                 <p><strong>{{ t('footer_email') }}</strong></p>
             </div>
 
@@ -37,8 +37,8 @@
             <div class="footer-col">
                 <h4 :lang="locale">{{ t('footer_location_title') }}</h4>
                 <div class="title-underline"></div>
-                <p :lang="locale">HarashFit</p>
-                <p :lang="locale">Talla Al Alli, Amman, Jordan</p>
+                <p>HarashFit</p>
+                <p>Talla Al Alli, Amman, Jordan</p>
             </div>
 
             <!-- Hours -->
@@ -67,13 +67,14 @@
                 <i class="fas fa-dumbbell"></i>
             </div>
             <p class="copyright">
-                © 2025 HarashFit. {{ t('footer_rights') }}
+                "© 2025 HarashFit." {{ t('footer_rights') }}
             </p>
         </div>
     </footer>
 </template>
 
 <script setup>
+import logo from '@/assets/images/logo.png';
 import { useI18n } from "vue-i18n";
 const { t, locale } = useI18n();
 </script>
@@ -85,6 +86,10 @@ const { t, locale } = useI18n();
     padding: 50px 20px 7px;
 }
 
+.footer-col {
+    flex: 1 1 240px;
+}
+
 .footer-container {
     max-width: 1200px;
     margin: auto;
@@ -93,10 +98,6 @@ const { t, locale } = useI18n();
     justify-content: space-between;
     gap: 40px;
     margin-bottom: 22px;
-}
-
-.footer-col {
-    flex: 1 1 240px;
 }
 
 .footer-logo {

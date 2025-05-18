@@ -39,7 +39,6 @@ const { t, locale } = useI18n();
 
 <style scoped>
 .hero-section {
-
     padding: 50px 40px;
     color: white;
     min-height: calc(40vh - 100px);
@@ -69,7 +68,7 @@ const { t, locale } = useI18n();
 .hero-img {
     max-width: 100%;
     height: auto;
-    border-radius: 16px;
+    border-radius: 17px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -144,5 +143,12 @@ h1 {
 .cert-button .icon {
     font-size: 20px;
     margin-top: 1px;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-section {
+    padding-top: 0px;
+    min-height: auto;
+  }
 }
 </style>

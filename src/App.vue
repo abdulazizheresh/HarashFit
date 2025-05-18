@@ -4,10 +4,11 @@
 
     <v-main class="main-content">
       <router-view />
+    <CookieConsent />
+
     </v-main>
 
     <FooterSection />
-    <CookieConsent />
   </v-app>
 </template>
 
@@ -21,7 +22,7 @@ export default {
   components: {
     NavbarSection,
     FooterSection,
-    CookieConsent
+    CookieConsent,
   }
 };
 </script>
@@ -40,21 +41,18 @@ body,
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: space-between; /* يدفع Header والأولاد والفوتر إلى الأطراف */
+  min-height: 100vh;
   background: linear-gradient(to bottom, #000000, #810810);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+
 .main-content {
   flex: 1;
   position: relative;
   z-index: 1;
-}
-
-footer {
-  position: relative;
-  z-index: 2;
-  width: 100%;
 }
 </style>
