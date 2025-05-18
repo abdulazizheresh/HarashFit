@@ -1,23 +1,23 @@
 <template>
     <section class="blog-hero">
-      <div class="blog-container">
-        <div class="blog-text" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
-          <h1 :lang="locale">{{ t('blog_hero_title') }}</h1>
-          <p v-html="t('blog_hero_text')" :lang="locale"></p>
+        <div class="blog-container">
+            <div class="blog-text" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
+                <h1 :lang="locale">{{ t('blog_hero_title') }}</h1>
+                <p v-html="t('blog_hero_text')" :lang="locale"></p>
+            </div>
+            <div class="blog-image">
+                <img src="@/assets/images/home_1.png" alt="Blog Hero" />
+            </div>
         </div>
-        <div class="blog-image">
-          <img src="@/assets/images/home_1.png" alt="Blog Hero" />
-        </div>
-      </div>
     </section>
-  </template>
-  
+</template>
 
-  <script setup>
-  import { useI18n } from "vue-i18n";
-  const { t, locale } = useI18n();
-  </script>
-  
+
+<script setup>
+import { useI18n } from "vue-i18n";
+const { t, locale } = useI18n();
+</script>
+
 
 <style scoped>
 .blog-hero {
@@ -89,12 +89,12 @@
     .blog-hero {
         margin-top: -27px;
         padding: 70px 20px;
+        padding-top: 10px;
     }
 
     .blog-container {
         flex-direction: column;
         align-items: flex-start;
-        /* مهم: يبقي كل شيء جهة اليسار */
         text-align: left;
         height: 350px;
 
@@ -114,7 +114,6 @@
 
     .blog-text p {
         text-align: left;
-        /* مهم جداً لإبقاء النص على اليسار */
     }
 
     .blog-image {

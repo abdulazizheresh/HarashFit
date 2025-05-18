@@ -87,6 +87,7 @@ const { t, locale } = useI18n();
     .services-hero {
         margin-top: -27px;
         padding: 70px 20px;
+        padding-top: 10px;
     }
 
     .services-container {

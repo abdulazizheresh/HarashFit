@@ -173,8 +173,8 @@ export default {
 
     // Contact Screen (Contact Info Section)
     contact_info_location_title: "Our Location",
-    contact_info_location_name: "Body Fusion Gym",
-    contact_info_location_address: "Jl. Kebugaran No. 21, Jakarta Selatan, Indonesia",
+    contact_info_location_name: "HaarshFit",
+    contact_info_location_address: "Tlaa Al-Ali, Amman, Jordan",
 
     contact_info_hours_title: "Operating Hours",
     contact_info_hours_weekdays: "Saturday - Wednesday : 08:00 AM - 5:00 PM",
@@ -217,6 +217,11 @@ export default {
     footer_impressum: "Impressum",
     footer_rights: "All rights reserved.",
 
+    // Whatsapp Section
+    whatsapp_section_tooltip: "Need help?",
+    whatsapp_section_message: "Hello, I would like to inquire about your services",
+
+    // Cookie Consent
     "cookie": {
         "message": "We use cookies to improve your experience.",
         "learn_more": "Learn more",

@@ -61,11 +61,14 @@
 
         <!-- Bottom Strip -->
         <div class="footer-bottom">
-            <div class="social-icons">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fas fa-dumbbell"></i>
-            </div>
+<div class="social-icons">
+    <a href="https://www.facebook.com/harashfit/" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/harashfit/" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+    </a>
+</div>
             <p class="copyright">
                 "© 2025 HarashFit." {{ t('footer_rights') }}
             </p>

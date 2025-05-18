@@ -89,6 +89,7 @@ const { t, locale } = useI18n();
     .contact-hero {
         margin-top: -27px;
         padding: 70px 20px;
+        padding-top: 10px;
     }
 
     .contact-container {

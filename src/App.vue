@@ -4,17 +4,18 @@
 
     <v-main class="main-content">
       <router-view />
-    <CookieConsent />
-
+      <CookieConsent />
     </v-main>
 
     <FooterSection />
+    <WhatsappSection />
   </v-app>
 </template>
 
 <script>
 import NavbarSection from "@/components/layout/NavbarSection.vue";
 import FooterSection from "@/components/layout/FooterSection.vue";
+import WhatsappSection from "./components/WhatsappSection.vue";
 import CookieConsent from "@/components/CookieConsent.vue";
 
 export default {
@@ -22,6 +23,7 @@ export default {
   components: {
     NavbarSection,
     FooterSection,
+    WhatsappSection,
     CookieConsent,
   }
 };
@@ -42,13 +44,11 @@ body,
   flex-direction: column;
   align-content: center;
   justify-content: space-between; /* يدفع Header والأولاد والفوتر إلى الأطراف */
-  min-height: 100vh;
   background: linear-gradient(to bottom, #000000, #810810);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 
 .main-content {
   flex: 1;

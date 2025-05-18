@@ -174,8 +174,8 @@ export default {
 
     // Contact Screen (Contact Info Section)
     contact_info_location_title: "موقعنا",
-    contact_info_location_name: "نادي بودي فيوجن",
-    contact_info_location_address: "شارع اللياقة رقم ٢١، جنوب جاكرتا، إندونيسيا",
+    contact_info_location_name: "HarashFit",
+    contact_info_location_address: "تلاع العلي, عمان, الأردن",
 
     contact_info_hours_title: "ساعات العمل",
     contact_info_hours_weekdays: "السبت - الأربعاء : 08:00AM - 5:00PM",
@@ -217,6 +217,10 @@ export default {
     footer_cookies: "سياسة ملفات تعريف الارتباط",
     footer_impressum: "الإشعار القانوني",
     footer_rights: "جميع الحقوق محفوظة.",
+
+    // Whatsapp Section
+    whatsapp_section_tooltip: "هل تحتاج مساعدة؟",
+    whatsapp_section_message: "مرحبًا، أريد الاستفسار عن خدماتكم",
 
     "cookie": {
         "message": "نستخدم ملفات تعريف الارتباط لتحسين تجربتك.",

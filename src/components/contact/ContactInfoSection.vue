@@ -43,14 +43,16 @@
                     <div class="underline"></div>
                     <div class="social-links">
                         <div class="social-item">
-                            <i class="fab fa-facebook"></i> @BodyFusion
-                        </div>
-                        <div class="social-item">
-                            <i class="fab fa-instagram"></i> @BodyFusion
-                        </div>
-                        <div class="social-item">
-                            <i class="fab fa-twitter"></i> @BodyFusion
-                        </div>
+    <a href="https://www.facebook.com/harashfit/" target="_blank">
+        <i class="fab fa-facebook"></i> @HarashFit
+    </a>
+</div>
+<div class="social-item">
+    <a href="https://www.instagram.com/harashfit/" target="_blank">
+        <i class="fab fa-instagram"></i> @HarashFit
+    </a>
+</div>
+
                     </div>
                 </div>
             </div>
@@ -145,6 +147,28 @@ p {
     background: #222;
     padding: 10px;
     border-radius: 50%;
+}
+
+.social-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition for hover/focus/click */
+    position: relative;
+}
+
+/* Hover and Focus animation */
+.social-item a:hover,
+.social-item a:focus {
+    color: #f0ece5;
+    text-decoration: none;
+    transform: scale(1.05); /* Slight zoom */
+}
+
+/* Click animation (active) */
+.social-item a:active {
+    transform: scale(0.95); /* Press-down effect */
+    color: #ffdddd; /* Optional feedback color */
 }
 
 /* Responsive */
