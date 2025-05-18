@@ -1,11 +1,13 @@
-<template>  
-  <v-app class="app-container">    
-    <NavbarSection />    
-    <v-main class="main-content">      
-      <router-view />    
-      <CookieConsent/>    
-    </v-main>    
-    <FooterSection />  
+<template>
+  <v-app class="app-container">
+    <NavbarSection />
+
+    <v-main class="main-content">
+      <router-view />
+    </v-main>
+
+    <FooterSection />
+    <CookieConsent />
   </v-app>
 </template>
 
@@ -24,8 +26,10 @@ export default {
 };
 </script>
 
-<style>
-html, body, #app {
+<style scoped>
+html,
+body,
+#app {
   height: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -48,7 +52,6 @@ html, body, #app {
   z-index: 1;
 }
 
-/* إضافة نمط لضمان رؤية الـ footer */
 footer {
   position: relative;
   z-index: 2;
