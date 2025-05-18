@@ -185,7 +185,7 @@ export default {
     contact_info_contact_title: "اتصل بنا",
 
     contact_info_phone: "+962 7 9060 6181 :رقم الهاتف",
-    contact_info_email: "Email : baderharash{'@'}gmail.com :البريد الإلكتروني",
+    contact_info_email: "baderharash{'@'}gmail.com :البريد الإلكتروني",
 
     contact_info_connect_title: "تواصل معنا",
 
@@ -201,7 +201,7 @@ export default {
     footer_description: "مدرب مستقل للياقة وكمال الأجسام — يُمكّن العملاء من خلال تدريب مخصص والتزام حقيقي.",
     footer_contact_us: "اتصل بنا",
     footer_phone: "+962 7 9060 6181 :رقم الهاتف",
-    footer_email: "Email : baderharash{'@'}gmail.com :البريد الإلكتروني",
+    footer_email: "baderharash{'@'}gmail.com :البريد الإلكتروني",
     footer_links_title: "روابط سريعة",
     footer_link_services: "الخدمات",
     footer_link_blog: "أرشيف المقالات",
