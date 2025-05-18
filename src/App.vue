@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 html,
 body,
 #app {
