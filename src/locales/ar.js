@@ -53,8 +53,7 @@ export default {
     // Services Screen (Services Our Services Section)
     our_services_heading_small: "خدماتنا",
     our_services_heading_big: `أفضل الخدمات لحياة <span class="highlight">أكثر <br />نشاطًا</span> وصحة`,
-    our_services_description:
-        "لوريم إيبسوم دولار سيت أميت كونسيكتيتور. بوسوير فيل كونديمينتوم رتروم سيت هابيتانت أليكت. إليمنتوم أوت ليكتوس فيليس فيتاي سيم ريسوس.",
+    our_services_description: "اكتشف خدمات مصممة خصيصًا لدعم أهدافك والارتقاء بأسلوب حياتك.",
     our_services_view_more: "عرض المزيد",
     our_services_view_less: "عرض أقل",
     our_services_learn_more: "اعرف المزيد",
@@ -126,8 +125,11 @@ export default {
     post_detail_why_title: "🔥 لماذا يعتبر {keyword} فعالًا؟",
     post_detail_tips_title: "💡 نصائح لتحقيق أفضل النتائج",
     post_detail_note: "🔥 جاهز لحرق الدهون في 30 دقيقة فقط؟ جرّب هذه التمارين الآن!",
-    post_detail_sidebar_hours: "ساعات العمل",
-    post_detail_sidebar_services: "كل الخدمات",
+    post_detail_sidebar_hours_title: "ساعات العمل",
+    post_detail_sidebar_hours_1: "السبت - الأربعاء : 08.00 - 17.00",
+    post_detail_sidebar_hours_2: "الخميس : 08.00 - 14.00",
+    post_detail_sidebar_hours_3: "الجمعة : مغلق",
+    post_detail_sidebar_related: "منشورات ذات صلة",
 
     // Blog Post Screen (Blog Post Question Section)
     contact_us_small: "اتصل بنا",
@@ -156,12 +158,12 @@ export default {
     // About Screen (About Details Section)
     about_detail_title_small: "من نحن",
     about_detail_title_big: "ابتكار يركز على <span class='highlight'>راحتك</span>",
-    about_detail_paragraph: "لوريم إيبسوم دولار سيت أميت. بوسوير فيل كونديمينتوم رتروم سيت هابيتانت أليكيت...",
+    about_detail_paragraph: "بخبرة عملية تمتد لسنوات كمدرب شخصي معتمد (CPT)، أُقدّم برامج متخصصة في إنقاص الوزن، بناء الاجسام، واللياقة الوظيفية. رسالتي هي تمكين الأفراد من تحقيق نتائج مستدامة من خلال خطط تدريب مصممة خصيصًا لتناسب أهدافهم ونمط حياتهم. الأمر لا يقتصر على التمارين فحسب، بل يتعلق ببناء نسخة أقوى، أكثر صحة وثقة من نفسك.",
     about_detail_stat_1: "سنة من التميز",
-    about_detail_stat_2: "عضو",
+    about_detail_stat_2: "أعضاء",
     about_detail_stat_3: "حصة أسبوعية",
     about_detail_stat_4: "مدرب خبير",
-    about_detail_feature_1: "مدربون محترفون",
+    about_detail_feature_1: "مدرب محترف",
     about_detail_feature_2: "إرشادات غذائية",
     about_detail_feature_3: "عضوية مميزة",
     about_detail_feature_4: "تتبع التقدم",
@@ -206,7 +208,7 @@ export default {
     footer_link_services: "الخدمات",
     footer_link_blog: "أرشيف المقالات",
     footer_link_about: "من نحن",
-    footer_link_team: "فريق العمل",
+    footer_link_team: "تواصل معنا",
     footer_location_title: "موقعنا",
     footer_hours_title: "ساعات العمل",
     footer_hours_1: "السبت - الأربعاء : 08.00 - 17.00",

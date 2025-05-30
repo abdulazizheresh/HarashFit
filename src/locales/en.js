@@ -52,8 +52,7 @@ export default {
     // Services Screen (Services Our Services Section)
     our_services_heading_small: "Our Services",
     our_services_heading_big: `Best Services for a <span class="highlight">More <br />Active</span>, Healthy Life`,
-    our_services_description:
-        "Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet. Elementum ut lectus felis vitae sem risus.",
+    our_services_description: "Discover personalized services designed to support your goals and elevate your lifestyle.",
     our_services_view_more: "View More",
     our_services_view_less: "View Less",
     our_services_learn_more: "Learn More",
@@ -124,8 +123,11 @@ export default {
     post_detail_why_title: "🔥 Why Is This {keyword} Effective?",
     post_detail_tips_title: "💡 Tips for Maximum Results",
     post_detail_note: "🔥 Ready to burn fat in just 30 minutes? Try these exercises today and feel the difference!",
-    post_detail_sidebar_hours: "Operating hours",
-    post_detail_sidebar_services: "All Services",
+    post_detail_sidebar_hours_title: "Operating hours",
+    post_detail_sidebar_hours_1: "Saturday - Wednesday : 08:00AM - 5:00PM",
+    post_detail_sidebar_hours_2: "Thursday : 08:00AM - 2:00PM",
+    post_detail_sidebar_hours_3: "Friday : Closed",
+    post_detail_sidebar_related: "Related Posts",
 
     // Blog Post Screen (Blog Post Question Section)
     contact_us_small: "Contact Us",
@@ -154,12 +156,12 @@ export default {
     // About Screen (About Details Section
     about_detail_title_small: "About Us",
     about_detail_title_big: "Innovation Focused on Your <span class='highlight'>Comfort</span>",
-    about_detail_paragraph: "Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet...",
+    about_detail_paragraph: "With years of hands-on experience as a certified personal trainer (CPT), I specialize in weight loss, Bodybuilding training, and functional fitness. My mission is to empower individuals to achieve lasting results through tailored programs built around their unique goals and lifestyles. This isn’t just about workouts—it’s about building a stronger, healthier, and more confident version of you.",
     about_detail_stat_1: "Years of Excellence",
     about_detail_stat_2: "Members",
     about_detail_stat_3: "Weekly Classes",
-    about_detail_stat_4: "Expert Trainers",
-    about_detail_feature_1: "Expert Trainers",
+    about_detail_stat_4: "Expert Trainer",
+    about_detail_feature_1: "Expert Trainer",
     about_detail_feature_2: "Nutrition Guidance",
     about_detail_feature_3: "Premium Membership",
     about_detail_feature_4: "Progress Tracking",
@@ -205,7 +207,7 @@ export default {
     footer_link_services: "Services",
     footer_link_blog: "Blog Archive",
     footer_link_about: "About Us",
-    footer_link_team: "Our Team",
+    footer_link_team: "Contact Us",
     footer_location_title: "Our Location",
     footer_hours_title: "Operating Hours",
     footer_hours_1: "Saturday - Wednesday : 08:00AM - 5:00PM",

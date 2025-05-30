@@ -6,7 +6,7 @@
                 <p v-html="t('services_hero_text')" :lang="locale"></p>
             </div>
             <div class="services-image">
-                <img src="@/assets/images/home_1.png" alt="Services" />
+                <img src="@/assets/images/home_1.webp" alt="Services" loading="lazy"/>
             </div>
         </div>
     </section>

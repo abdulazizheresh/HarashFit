@@ -1,26 +1,40 @@
 <template>
-    <section class="post-hero">
+    <section class="post-hero" v-if="post">
         <div class="post-container">
             <div class="post-text">
-                <h1>{{ post.title }}</h1>
-                <p class="excerpt">{{ post.excerpt }}</p>
+                <h1>{{ post.locales[locale]?.title }}</h1>
+                <p class="excerpt">{{ post.locales[locale]?.excerpt }}</p>
             </div>
-            <!-- <div class="post-image">
-                <img src="@/assets/images/home_1.png" alt="Post Hero" />
-            </div> -->
+        </div>
+    </section>
+
+    <section class="post-hero" v-else>
+        <div class="post-container">
+            <div class="post-text">
+                <h1>Post not found</h1>
+                <p class="excerpt">The blog post you're looking for doesn't exist.</p>
+            </div>
         </div>
     </section>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 
-import blogPosts from '@/data/BlogList.js'
+const { locale } = useI18n()
+const route = useRoute()
 
-const route = useRoute() 
-const postId = parseInt(route.params.id)
-const post = computed(() => blogPosts.find(p => p.id === postId))
+const post = ref(null)
+
+onMounted(async () => {
+    const res = await fetch('/data/blog-posts.json')
+    const posts = await res.json()
+
+    const postId = Number(route.params.id)
+    post.value = posts.find(p => p.id === postId)
+})
 </script>
 
 <style scoped>

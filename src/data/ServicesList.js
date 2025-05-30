@@ -45,7 +45,7 @@ const servicesList = [
         title: "Muscle Building",
         description:
             "Focused programs designed to increase muscle mass, strength, and endurance using tailored resistance training and hypertrophy techniques.",
-        image: "/assets/images/home_1.png",
+        image: "/assets/images/home_1.webp",
         category: "Fitness",
         benefits: [
             {

@@ -2,7 +2,7 @@
     <div class="navbar-wrapper">
         <div class="navbar-container">
             <RouterLink to="/" @click="menuOpen = false">
-                <img src="@/assets/images/logo.png" alt="Logo" class="logo" />
+                <img src="@/assets/images/logo.webp" alt="Logo" class="logo" loading="lazy"/>
             </RouterLink>
 
             <nav class="nav-links" :class="{ show: menuOpen }">

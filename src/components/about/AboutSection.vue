@@ -6,7 +6,7 @@
                 <p v-html="t('about_subtitle')" :lang="locale"></p>
             </div>
             <div class="about-image">
-                <img src="@/assets/images/home_1.png" alt="About Us" />
+                <img src="@/assets/images/home_1.webp" alt="About Us" loading="lazy"/>
             </div>
         </div>
     </section>

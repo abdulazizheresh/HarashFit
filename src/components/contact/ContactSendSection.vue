@@ -33,7 +33,7 @@
             <div class="divider"></div>
 
             <div class="image-side" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
-                <img src="@/assets/images/home_1.png" alt="Contact Image" />
+                <img src="@/assets/images/home_1.webp" alt="Contact Image" loading="lazy"/>
             </div>
         </div>
     </section>
@@ -187,4 +187,47 @@ button:hover {
         margin-top: 40px;
     }
 }
+
+@media (max-width: 768px) {
+    .form-side h2 {
+        font-size: 24px;
+    }
+
+    .form-side {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+
+    .underline {
+        width: 200px;
+    }
+
+    .contact-form {
+        gap: 16px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        padding-left: 44px;
+        font-size: 14px;
+    }
+
+    .input-group i {
+        font-size: 14px;
+        left: 14px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .image-side {
+    display: none;
+}
+
+}
+
 </style>

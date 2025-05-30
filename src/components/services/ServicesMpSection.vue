@@ -59,7 +59,7 @@ const plans = PricePlanList.slice(0, 3);
 
 <style scoped>
 .membership-section {
-    background: url('@/assets/images/mp_1.png');
+    background: url('@/assets/images/mp_1.webp');
     background-size: cover;
     color: #f0ece5;
     padding: 80px 20px 40px;

@@ -1,39 +1,35 @@
 <template>
     <section class="legal-section">
         <div class="container">
-            <h1 class="legal-title">Impressum</h1>
+            <h1 class="legal-title">Site Information</h1>
 
-            <h2>Information according to § 5 TMG</h2>
+            <h2>Owner and Operator</h2>
             <p>
-                John Doe<br>
-                Personal Fitness Coaching<br>
-                Musterstraße 12<br>
-                12345 Musterstadt<br>
-                Germany
+                Bader Harash<br>
+                HarashFit – Personal Training<br>
+                Amman, Jordan
             </p>
 
             <h2>Contact</h2>
             <p>
-                Phone: +49 123 456789<br>
-                Email: info@example.com
+                Phone: +962 7 9060 6181<br>
+                Email: baderharash@harashfit.com<br>
+                Website: <a href="https://www.harashfit.com" target="_blank">www.harashfit.com</a>
             </p>
 
-            <h2>Responsible for content according to § 55 Abs. 2 RStV</h2>
+            <h2>Content Responsibility</h2>
             <p>
-                John Doe<br>
-                Musterstraße 12<br>
-                12345 Musterstadt
+                All content published on this website is provided by HarashFit unless otherwise stated. For any concerns regarding the content, please contact us directly using the information above.
             </p>
 
             <h2>Disclaimer</h2>
             <p>
-                Despite careful content control, we assume no liability for the content of external links. The operators
-                of the linked pages are solely responsible for their content.
+                We strive to ensure that the content on this website is accurate and up-to-date. However, we make no warranties of any kind about the completeness or accuracy of the content. We are not responsible for the content of external websites linked from our site.
             </p>
 
-            <h2>EU Dispute Resolution</h2>
+            <h2>Online Dispute Resolution</h2>
             <p>
-                The European Commission provides a platform for online dispute resolution (OS):<br>
+                If you are a resident in a country that provides online dispute resolution mechanisms, you may refer to your local consumer protection authority. The European Commission's ODR platform is available here:<br>
                 <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>
             </p>
 
@@ -43,6 +39,7 @@
         </div>
     </section>
 </template>
+
 
 <style scoped>
 .legal-section {

@@ -6,7 +6,7 @@
                 <p v-html="t('contact_hero_paragraph')" :lang="locale"></p>
             </div>
             <div class="contact-image">
-                <img src="@/assets/images/home_1.png" alt="Contact Us" />
+                <img src="@/assets/images/home_1.webp" alt="Contact Us" loading="lazy"/>
             </div>
         </div>
     </section>
@@ -97,7 +97,6 @@ const { t, locale } = useI18n();
         align-items: flex-start;
         text-align: left;
         height: 350px;
-
     }
 
     .contact-text {
@@ -128,7 +127,6 @@ const { t, locale } = useI18n();
 
     .contact-image img {
         height: 200px;
-        max-width: 280px;
         width: 100%;
     }
 }

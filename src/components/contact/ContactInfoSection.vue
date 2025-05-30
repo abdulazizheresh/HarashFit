@@ -43,15 +43,15 @@
                     <div class="underline"></div>
                     <div class="social-links">
                         <div class="social-item">
-    <a href="https://www.facebook.com/harashfit/" target="_blank">
-        <i class="fab fa-facebook"></i> @HarashFit
-    </a>
-</div>
-<div class="social-item">
-    <a href="https://www.instagram.com/harashfit/" target="_blank">
-        <i class="fab fa-instagram"></i> @HarashFit
-    </a>
-</div>
+                            <a href="https://www.facebook.com/harashfit/" target="_blank">
+                                <i class="fab fa-facebook"></i> @HarashFit
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://www.instagram.com/harashfit/" target="_blank">
+                                <i class="fab fa-instagram"></i> @HarashFit
+                            </a>
+                        </div>
 
                     </div>
                 </div>
@@ -86,11 +86,14 @@ const { t, locale } = useI18n();
     background: transparent;
     border: 1px solid #f0ece5;
     padding: 30px 20px;
-    flex: 1 1 450px;
+    flex: 1 1 100%;
+    max-width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
+
 
 .info-block {
     width: 100%;
@@ -153,7 +156,8 @@ p {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.3s ease; /* Smooth transition for hover/focus/click */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover/focus/click */
     position: relative;
 }
 
@@ -162,25 +166,40 @@ p {
 .social-item a:focus {
     color: #f0ece5;
     text-decoration: none;
-    transform: scale(1.05); /* Slight zoom */
+    transform: scale(1.05);
+    /* Slight zoom */
 }
 
 /* Click animation (active) */
 .social-item a:active {
-    transform: scale(0.95); /* Press-down effect */
-    color: #ffdddd; /* Optional feedback color */
+    transform: scale(0.95);
+    /* Press-down effect */
+    color: #ffdddd;
+    /* Optional feedback color */
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
+    .info-card {
+        padding: 20px 15px;
+        max-width: 100%;
     }
 
-    .info-card {
-        width: 100%;
-        max-width: 370px;
+    .icon-title h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .social-item i {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    .social-item a {
+        font-size: 14px;
     }
 }
 </style>

@@ -73,7 +73,7 @@ const offersList = computed(() => messages.value[locale.value].offer_list);
     width: 100%;
     max-width: 400px;
     height: 450px;
-    background: url('@/assets/images/offer_1.png') no-repeat center/contain;
+    background: url('@/assets/images/offer_1.webp') no-repeat center/contain;
 }
 
 .stats {

@@ -6,7 +6,7 @@
             <div class="cert-grid">
                 <div class="cert-card fade-up" v-for="(cert, index) in certifications" :key="index"
                     :style="{ animationDelay: `${index * 150}ms` }">
-                    <img :src="cert.image" :alt="cert.title" class="cert-image" style="margin: auto" />
+                    <img :src="cert.image" :alt="cert.title" class="cert-image" style="margin: auto" loading="lazy"/>
                     <div class="cert-info">
                         <h3 class="cert-title">{{ cert.title }}</h3>
                         <p class="cert-date">{{ cert.date }}</p>
@@ -24,11 +24,11 @@ import { computed } from 'vue';
 
 const { t } = useI18n();
 
-import cert1 from '@/assets/certifications/cert_1.png';
-import cert2 from '@/assets/certifications/cert_2.jpeg';
-import cert3 from '@/assets/certifications/cert_3.jpeg';
-import cert4 from '@/assets/certifications/cert_4.jpeg';
-import cert5 from '@/assets/certifications/cert_5.jpeg';
+import cert1 from '@/assets/certifications/cert_1.webp';
+import cert2 from '@/assets/certifications/cert_2.webp';
+import cert3 from '@/assets/certifications/cert_3.webp';
+import cert4 from '@/assets/certifications/cert_4.webp';
+import cert5 from '@/assets/certifications/cert_5.webp';
 
 const certifications = computed(() => [
     {

@@ -6,7 +6,7 @@
                 <p v-else>Service not found.</p>
             </div>
             <!-- <div class="service_detail-image">
-                <img src="@/assets/images/home_1.png" alt="service_detail Hero" />
+                <img src="@/assets/images/home_1.webp" alt="service_detail Hero" loading="lazy"/>
             </div> -->
         </div>
     </section>

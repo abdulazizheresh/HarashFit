@@ -16,7 +16,7 @@ const MembershipsPlanList = [
         id: 2,
         title: 'Annual Plan',
         subtitle: 'For Long-Term Savings',
-        price: 500,
+        price: 900,
         priceType: 'year',
         benefits: [
             'Unlimited access to all features',

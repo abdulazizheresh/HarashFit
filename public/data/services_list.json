@@ -1,0 +1,197 @@
+[
+    {
+        "id": 1,
+        "slug": "personal-training",
+        "icon": "🏋️‍♂️",
+        "image": "s1.webp",
+        "category": "coaching",
+        "locales": {
+            "ar": {
+                "title": "التدريب الشخصي – NASM CPT",
+                "description": "برنامج تدريبي فردي مبني على مستواك وهدفك",
+                "content": "كمدرب شخصي معتمد، أعمل معك على تصميم برنامج تدريبي يناسب قدراتك وأهدافك. أركز على تقنيات الأداء السليم، وتقوية العضلات، والوقاية من الإصابات. سأرافقك خطوة بخطوة لتحصل على أقصى استفادة من كل تمرين."
+            },
+            "en": {
+                "title": "Personal Training – NASM CPT",
+                "description": "One-on-one sessions customized to your goals and level.",
+                "content": "As a certified personal trainer, I create personalized workout plans tailored to your fitness level and lifestyle. I focus on correct form, strength building, and injury prevention. Step by step, I'll guide you to achieve your best results."
+            }
+        },
+        "benefits": [
+            {
+                "sectionTitle": {
+                    "ar": "الفوائد الرئيسية",
+                    "en": "Key Benefits"
+                },
+                "points": {
+                    "ar": [
+                        "برنامج مخصص حسب حالتك البدنية",
+                        "متابعة دقيقة لتحقيق أهدافك",
+                        "تصحيح الأداء وتجنب الإصابات"
+                    ],
+                    "en": [
+                        "Custom program based on your fitness condition",
+                        "Detailed progress monitoring toward your goals",
+                        "Correct form and injury prevention"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "slug": "mental-toughness",
+        "icon": "🧠",
+        "image": "s4.webp",
+        "category": "mindset",
+        "locales": {
+            "ar": {
+                "title": "الصلابة الذهنية – NASM Mental Toughness",
+                "description": "تدريبات تعزز تركيزك وانضباطك الذاتي",
+                "content": "أساعدك على بناء عقلية قوية تُمكنك من الالتزام وتحقيق أهدافك الرياضية. من خلال جلسات تدريب ذهني، نتعامل مع التوتر، التردد، ونطوّر قوة الإرادة والانضباط الذاتي لتنجح في التغيير طويل الأمد."
+            },
+            "en": {
+                "title": "Mental Toughness Training – NASM Mental Toughness",
+                "description": "Train your mindset for lasting success.",
+                "content": "I work with you on developing mental resilience and focus. Through structured mental coaching, I help you overcome hesitation, manage stress, and build the discipline required to stay consistent and succeed in your fitness journey."
+            }
+        },
+        "benefits": [
+            {
+                "sectionTitle": {
+                    "ar": "الفوائد الرئيسية",
+                    "en": "Key Benefits"
+                },
+                "points": {
+                    "ar": [
+                        "تعزيز التركيز والثقة بالنفس",
+                        "التحكم في التوتر والانفعالات",
+                        "تنمية الانضباط الذاتي للاستمرارية"
+                    ],
+                    "en": [
+                        "Boost focus and self-confidence",
+                        "Control stress and emotions",
+                        "Build self-discipline for consistency"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "slug": "weight-loss",
+        "icon": "🧬",
+        "image": "s3.webp",
+        "category": "weight-loss",
+        "locales": {
+            "ar": {
+                "title": "خسارة الوزن – NASM Weight Loss Specialist",
+                "description": "نظام غذائي وتمارين مبنية على العلم",
+                "content": "أبني لك خطة شاملة لفقدان الوزن بطريقة صحية ومستدامة، بدون حرمان. أدمج بين التمارين المناسبة والتغذية التدريجية، وأتابع معك النتائج لضمان الوصول لهدفك مع الحفاظ على كتلتك العضلية وحالتك النفسية."
+            },
+            "en": {
+                "title": "Weight Loss Coaching – NASM Weight Loss Specialist",
+                "description": "A science-based plan for sustainable fat loss.",
+                "content": "I create a personalized program that helps you lose fat healthily while preserving muscle. With gradual nutrition changes and effective workouts, I support your progress closely to make your results last."
+            }
+        },
+        "benefits": [
+            {
+                "sectionTitle": {
+                    "ar": "الفوائد الرئيسية",
+                    "en": "Key Benefits"
+                },
+                "points": {
+                    "ar": [
+                        "نقص وزن مستدام بدون حرمان",
+                        "دمج فعال بين التمرين والتغذية",
+                        "حفاظ على الحالة النفسية والعضلية"
+                    ],
+                    "en": [
+                        "Sustainable weight loss without deprivation",
+                        "Effective integration of workout and nutrition",
+                        "Preserve both mental and muscle health"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "slug": "physique-bodybuilding",
+        "icon": "🏆",
+        "image": "s2.webp",
+        "category": "bodybuilding",
+        "locales": {
+            "ar": {
+                "title": "بناء الجسم – NASM PBC",
+                "description": "برامج تضخيم أو تنشيف مخصصة لك",
+                "content": "أقدم لك خطة متكاملة لبناء الجسم وتحسين الشكل العام. أضع بعين الاعتبار نوع جسمك واستجابتك للتمارين والتغذية، وأعتمد على أساليب مدروسة للحصول على نتائج واضحة في شكل الجسم والعضلات."
+            },
+            "en": {
+                "title": "Bodybuilding Coaching – NASM PBC",
+                "description": "Custom hypertrophy and cutting plans.",
+                "content": "I help you build your ideal physique through precise workout and nutrition strategies. Whether you're aiming for muscle growth or fat reduction, I adapt your program to your body's response and keep track of every phase."
+            }
+        },
+        "benefits": [
+            {
+                "sectionTitle": {
+                    "ar": "الفوائد الرئيسية",
+                    "en": "Key Benefits"
+                },
+                "points": {
+                    "ar": [
+                        "بناء عضلي آمن ومدروس",
+                        "تنشيف الجسم بتدرج دون فقد كتلة",
+                        "تصميم شخصي حسب شكل الجسم"
+                    ],
+                    "en": [
+                        "Safe and structured muscle building",
+                        "Gradual cutting without losing mass",
+                        "Personalized design based on body shape"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "slug": "womens-fitness",
+        "icon": "🧘‍♀️",
+        "image": "s5.webp",
+        "category": "women",
+        "locales": {
+            "ar": {
+                "title": "لياقة المرأة – NASM WFS",
+                "description": "خطط مصممة خصيصًا للمرأة",
+                "content": "كمدرب متخصص، أساعد النساء على تحقيق أهدافهن بطرق تناسب أجسامهن وهرموناتهن. سواء كان الهدف هو فقدان الوزن، تحسين المظهر، أو الاستعداد لما بعد الحمل، أقدم أسلوبًا تدريجيًا وآمنًا يدعم كل امرأة."
+            },
+            "en": {
+                "title": "Women's Fitness Coaching – NASM WFS",
+                "description": "Plans designed for women’s physiology.",
+                "content": "I specialize in helping women train according to their bodies’ hormonal and physical needs. Whether your goal is fat loss, shaping, or postpartum recovery, I guide you with an empowering and personalized approach."
+            }
+        },
+        "benefits": [
+            {
+                "sectionTitle": {
+                    "ar": "الفوائد الرئيسية",
+                    "en": "Key Benefits"
+                },
+                "points": {
+                    "ar": [
+                        "مراعاة احتياجات الجسم الأنثوي",
+                        "خطة تدريجية وآمنة",
+                        "دعم نفسي وتحفيزي مستمر"
+                    ],
+                    "en": [
+                        "Adapted to female body needs",
+                        "Safe and progressive plan",
+                        "Continuous emotional and motivational support"
+                    ]
+                }
+            }
+        ]
+    }
+]

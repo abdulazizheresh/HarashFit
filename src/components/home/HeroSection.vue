@@ -26,7 +26,7 @@
             </div>
 
             <div class="right">
-                <img src="@/assets/images/home_1.png" alt="Hero" class="hero-img" />
+                <img src="@/assets/images/home_1.webp" alt="Hero" class="hero-img" loading="lazy"/>
             </div>
         </div>
     </section>

@@ -11,7 +11,7 @@
                     </div>
 
                     <div class="right-side" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
-                        <p  class="subtitle" :lang="locale">{{ t('our_services_description') }}</p>
+                        <p class="subtitle" :lang="locale">{{ t('our_services_description') }}</p>
                         <div class="small-underline"></div>
 
                         <button class="view-more" @click="showAll = !showAll">
@@ -24,48 +24,36 @@
             <!-- Services Grid -->
             <div class="services-grid">
                 <!-- أول ٤ كروت -->
-                <div
-                    v-for="(service, index) in firstFourServices"
-                    :key="service.id"
-                    class="service-card"
-                    :class="{
-                        'large-card': index === 0,
-                        'tall-card': index === 1,
-                        'small-card': index === 2 || index === 3
-                    }"
-                    :style="{ backgroundImage: `url(${service.image})` }"
-                    :data-aos="'fade-up'"
-                    :data-aos-delay="50 + (index * 20)"
-                    data-aos-duration="600"
-                >
+                <div v-for="(service, index) in firstFourServices" :key="service.id" class="service-card" :class="{
+                    'large-card': index === 0,
+                    'tall-card': index === 1,
+                    'small-card': index === 2 || index === 3
+                }" :style="{ backgroundImage: `url(/assets/images/services/${service.image})` }"
+                    :data-aos="'fade-up'" :data-aos-delay="50 + (index * 20)" data-aos-duration="600">
                     <h3>
-                        <span class="bold">{{ getFirstWord(service.title) }}</span> {{ getRestWords(service.title) }}
+                        <span class="bold">{{ getFirstWord(service.locales[locale].title) }}</span>
+                        {{ getRestWords(service.locales[locale].title) }}
                     </h3>
-                    <p>{{ service.description }}</p>
+                    <p>{{ service.locales[locale].description }}</p>
                     <RouterLink :to="`/services/${service.id}`" class="learn-more">
                         {{ t('our_services_learn_more') }}
-                    </RouterLink>   
+                    </RouterLink>
                 </div>
             </div>
 
             <!-- الكروت الإضافية -->
             <div class="extra-services-grid" v-if="showAll">
-                <div
-                    v-for="(service, index) in restServices"
-                    :key="service.id"
-                    class="service-card"
-                    :style="{ backgroundImage: `url(${service.image})` }"
-                    :data-aos="'fade-up'"
-                    :data-aos-delay="50 + (index * 20)"
-                    data-aos-duration="600"
-                >
+                <div v-for="(service, index) in restServices" :key="service.id" class="service-card"
+                    :style="{ backgroundImage: `url(/assets/images/services/${service.image})` }" :data-aos="'fade-up'"
+                    :data-aos-delay="50 + (index * 20)" data-aos-duration="600">
                     <h3>
-                        <span class="bold">{{ getFirstWord(service.title) }}</span> {{ getRestWords(service.title) }}
+                        <span class="bold">{{ getFirstWord(service.locales[locale].title) }}</span>
+                        {{ getRestWords(service.locales[locale].title) }}
                     </h3>
-                    <p>{{ service.description }}</p>
+                    <p>{{ service.locales[locale].description }}</p>
                     <RouterLink :to="`/services/${service.id}`" class="learn-more">
                         {{ t('our_services_learn_more') }}
-                    </RouterLink>                
+                    </RouterLink>
                 </div>
             </div>
         </div>
@@ -73,21 +61,29 @@
 </template>
 
 <script setup>
-import servicesList from '@/data/ServicesList.js';
-import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
+import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { RouterLink } from 'vue-router';
 
 const { t, locale } = useI18n();
-
 const showAll = ref(false);
 
-const firstFourServices = servicesList.slice(0, 4);
-const restServices = servicesList.slice(4);
+const servicesList = ref([]);
+const firstFourServices = ref([]);
+const restServices = ref([]);
 
 const getFirstWord = (text) => text.split(' ')[0];
 const getRestWords = (text) => text.split(' ').slice(1).join(' ');
+
+onMounted(async () => {
+    const res = await fetch('/data/services_list.json');
+    const data = await res.json();
+    servicesList.value = data;
+    firstFourServices.value = data.slice(0, 4);
+    restServices.value = data.slice(4);
+});
 </script>
+
 
 <style scoped>
 .our-services-section {
@@ -248,6 +244,7 @@ const getRestWords = (text) => text.split(' ').slice(1).join(' ');
 
 /* موبايل */
 @media (max-width: 768px) {
+
     .services-grid,
     .extra-services-grid {
         display: flex;

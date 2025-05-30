@@ -9,9 +9,9 @@
             </div>
 
             <div class="cards">
-                <div v-for="(service, index) in services" :key="index" class="card" :style="{ backgroundImage: `url(${service.image})` }" :class="service.area"
-                    data-aos="fade-up" data-aos-offset="50" data-aos-delay="50" data-aos-duration="500"
-                    data-aos-easing="ease-out-cubic">
+                <div v-for="(service, index) in services" :key="index" class="card"
+                    :style="{ backgroundImage: `url(${service.image})` }" :class="service.area" data-aos="fade-up"
+                    data-aos-offset="50" data-aos-delay="50" data-aos-duration="500" data-aos-easing="ease-out-cubic">
                     <div class="overlay"></div>
                     <h3>
                         <span class="bold">{{ service.titleBold }}</span> {{ service.title }}
@@ -27,23 +27,43 @@
 </template>
 
 <script setup>
-import { useI18n } from "vue-i18n";
-import servicesList from '@/data/ServicesList.js'
+import { ref, watch, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n()
+const services = ref([])
 
-const services = servicesList.slice(0, 4).map((s) => {
-    const words = s.title.split(' ')
-    return {
-        id: s.id,
-        titleBold: words[0],
-        title: words.slice(1).join(' '),
-        description: s.description,
-        image: s.image,
-        area: s.id === 1 ? 'large' : s.id === 4 ? 'tall' : 'small',
+const loadServices = async () => {
+    try {
+        const response = await fetch('/data/services_list.json')
+        const data = await response.json()
+
+        services.value = data.slice(0, 4).map((s) => {
+            const localizedTitle = s.locales[locale.value]?.title || s.locales.en.title
+            const localizedDescription = s.locales[locale.value]?.description || s.locales.en.description
+            const words = localizedTitle.split(' ')
+
+            return {
+                id: s.id,
+                titleBold: words[0],
+                title: words.slice(1).join(' '),
+                description: localizedDescription,
+                image: `assets/images/services/${s.image}`,
+                area: s.id === 1 ? 'large' : s.id === 4 ? 'tall' : 'small',
+            }
+        })
+    } catch (error) {
+        console.error('Error loading services:', error)
     }
+}
+
+onMounted(loadServices)
+
+watch(locale, () => {
+    loadServices()
 })
 </script>
+
 
 <style scoped>
 .services-section {
@@ -99,6 +119,8 @@ const services = servicesList.slice(0, 4).map((s) => {
     padding: 30px 20px;
     border-radius: 8px;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 25vh;
     display: flex;
     flex-direction: column;
@@ -113,7 +135,8 @@ const services = servicesList.slice(0, 4).map((s) => {
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* ✅ لون غامق */
+    background: rgba(0, 0, 0, 0.5);
+    /* ✅ لون غامق */
     z-index: 0;
 }
 

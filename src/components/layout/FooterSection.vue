@@ -3,13 +3,13 @@
         <div class="footer-container">
             <!-- Logo & Description -->
             <div class="footer-col">
-                <img :src="logo" alt="Logo" class="footer-logo" />
+                <img :src="logo" alt="Logo" class="footer-logo" loading="lazy"/>
                 <p :lang="locale">{{ t('footer_description') }}</p>
 
                 <hr class="divider" />
                 <h4 :lang="locale">{{ t('footer_contact_us') }}</h4>
                 <div class="title-underline"></div>
-                <p :lang="locale"><strong>{{ t('footer_phone') }}</strong></p>
+                <p><strong>{{ t('footer_phone') }}</strong></p>
                 <p><strong>{{ t('footer_email') }}</strong></p>
             </div>
 
@@ -70,14 +70,14 @@
     </a>
 </div>
             <p class="copyright">
-                "© 2025 HarashFit." {{ t('footer_rights') }}
+                © 2025 HarashFit. {{ t('footer_rights') }}
             </p>
         </div>
     </footer>
 </template>
 
 <script setup>
-import logo from '@/assets/images/logo.png';
+import logo from '@/assets/images/logo.webp';
 import { useI18n } from "vue-i18n";
 const { t, locale } = useI18n();
 </script>

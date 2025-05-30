@@ -28,8 +28,8 @@ const { t, locale } = useI18n();
 
 // جعلنا الكونتاكتس ستاتيكية ليست ديناميكية ولكن باستخدام v-for لتنظيم الكود أكثر
 const contacts = computed(() => [
-  { title: t('contact_phone'), value: "+123 456 789", icon: "fas fa-phone-volume" },
-  { title: t('contact_email'), value: "bodyf@mail.com", icon: "fas fa-envelope" }
+    { title: t('contact_phone'), value: "+962 7 9060 6181", icon: "fas fa-phone-volume" },
+    { title: t('contact_email'), value: "baderharash@gmail.com", icon: "fas fa-envelope" }
 ]);
 </script>
 

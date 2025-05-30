@@ -1,40 +1,39 @@
 <template>
   <section class="blogs-section">
     <div class="container">
-      <!-- العنوان -->
-      <div class="section-header" data-aos="fade-up" >
+      <!-- Title -->
+      <div class="section-header" data-aos="fade-up">
         <h5 :lang="locale">{{ t('blogs_title_small') }}</h5>
         <h2 v-html="t('blogs_title_big')" :lang="locale"></h2>
         <div class="underline"></div>
       </div>
 
       <div class="blogs-grid">
-        <!-- التدوينة المميزة -->
-        <div v-for="post in featuredPost" :key="post.id" class="blog-card featured" data-aos="fade-up"
-          data-aos-delay="0">
-          <img :src="getImageUrl(post.image)" alt="Featured" />
+        <!-- Latest Post -->
+        <div v-if="latestPost" :key="latestPost.id" class="blog-card latest" data-aos="fade-up">
+          <img :src="getImageUrl(latestPost.image)" alt="Latest Post" loading="lazy" />
           <div class="meta">
-            <span><i class="fas fa-calendar-alt"></i> {{ post.date }}</span>
-            <span><i class="fas fa-comment"></i> {{ post.comments }}</span>
+            <span><i class="fas fa-calendar-alt"></i> {{ latestPost.date }}</span>
+            <span><i class="fas fa-comment"></i> {{ latestPost.comments }}</span>
           </div>
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.excerpt }}</p>
-          <RouterLink :to="`/blog/${post.id}`" class="more">{{ t('blogs_read_more') }}</RouterLink>
+          <h3>{{ latestPost.locales[locale]?.title }}</h3>
+          <p>{{ latestPost.locales[locale]?.excerpt }}</p>
+          <RouterLink :to="`/blog/${latestPost.id}`" class="more">{{ t('blogs_read_more') }}</RouterLink>
         </div>
 
-        <!-- التدوينات الأخرى -->
-        <div v-for="(post, index) in regularPosts" :key="post.id" class="blog-card regular" data-aos="fade-up"
+        <!-- Other Posts -->
+        <div v-for="(post, index) in otherPosts" :key="post.id" class="blog-card regular" data-aos="fade-up"
           :data-aos-delay="(index + 1) * 0.1">
           <div class="card-img">
-            <img :src="getImageUrl(post.image)" alt="Post" />
+            <img :src="getImageUrl(post.image)" alt="Post" loading="lazy"/>
           </div>
           <div class="card-content">
             <div class="meta">
               <span><i class="fas fa-calendar-alt"></i> {{ post.date }}</span>
               <span><i class="fas fa-comment"></i> {{ post.comments }}</span>
             </div>
-            <h4>{{ post.title }}</h4>
-            <p>{{ post.excerpt }}</p>
+            <h4>{{ post.locales[locale]?.title }}</h4>
+            <p>{{ post.locales[locale]?.excerpt }}</p>
             <RouterLink :to="`/blog/${post.id}`" class="more">{{ t('blogs_read_more') }}</RouterLink>
           </div>
         </div>
@@ -43,29 +42,34 @@
   </section>
 </template>
 
-
 <script setup>
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useI18n } from "vue-i18n";
+import { useI18n } from 'vue-i18n';
+
 const { t, locale } = useI18n();
 
-import blogPosts from '@/data/BlogList.js';
+const latestPost = ref(null);
+const otherPosts = ref([]);
 
-onMounted(() => {
+const getImageUrl = (fileName) => `/assets/images/blogs/${fileName}`;
+
+onMounted(async () => {
   AOS.init({
     duration: 800,
     once: true,
     easing: 'ease-in-out',
   });
+
+  const res = await fetch('/data/blog-posts.json');
+  const data = await res.json();
+
+  const sorted = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  latestPost.value = sorted[0];
+  otherPosts.value = sorted.slice(1);
 });
-
-const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
-const featuredPost = [sortedPosts[0]];
-const regularPosts = sortedPosts.slice(1);
-
-const getImageUrl = (fileName) => `/assets/images/${fileName}`;
 </script>
 
 <style scoped>
@@ -120,7 +124,7 @@ const getImageUrl = (fileName) => `/assets/images/${fileName}`;
   flex-direction: column;
 }
 
-.blog-card.featured img {
+.blog-card.latest img {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -167,9 +171,10 @@ const getImageUrl = (fileName) => `/assets/images/${fileName}`;
 }
 
 .card-img img {
-  width: 120px;
-  height: 100px;
-  object-fit: cover;
+  width: 140px;
+  max-width: 140px;
+  height: 140px;
+  object-fit: fill;
   border-radius: 4px;
 }
 
