@@ -51,7 +51,7 @@
             <h2>Contact Us</h2>
             <p class="legal-footer">
                 If you have any questions or concerns about our use of cookies, feel free to contact us:<br />
-                <strong>Email:</strong> baderharash@harashfit.com<br />
+                <strong>Email:</strong> info@harashfit.com<br />
                 <strong>Phone:</strong> +962 7 9060 6181<br />
                 <strong>Address:</strong> Amman, Jordan
             </p>

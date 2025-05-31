@@ -38,7 +38,7 @@
                 <h4 :lang="locale">{{ t('footer_location_title') }}</h4>
                 <div class="title-underline"></div>
                 <p>HarashFit</p>
-                <p>Talla Al Alli, Amman, Jordan</p>
+                <p :lang="locale">{{ t('footer_location_address') }}</p>
             </div>
 
             <!-- Hours -->

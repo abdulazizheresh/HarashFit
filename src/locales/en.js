@@ -12,8 +12,8 @@ export default {
     hero_title: `Start Your <span class="highlight">Journey</span>
                  <br>with <span class="with">HarashFit</span>`,
     hero_description: "All programs are science-based, fully customized, and personally delivered by Coach Bader Alheresh.",
-    stat_1: "Satisfied customer",
-    stat_2: "Professional Trainer",
+    stat_1: "Customers",
+    stat_2: "Years of Excellence",
     view_certifications: "View Certifications",
 
     // Home Screen (Services Section)
@@ -65,17 +65,17 @@ export default {
         {
             icon: "🔥",
             title: "Family Discount",
-            description: "Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet.",
+            description: "Train together as a family and save more! Get exclusive discounts when you sign up with two or more relatives.",
         },
         {
             icon: "🎓",
             title: "Student Discount",
-            description: "Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet.",
+            description: "Full-time student? Enjoy discounted training packages with valid student ID – because your fitness matters too!",
         },
         {
             icon: "🆕",
             title: "New Member Promotion",
-            description: "Lorem ipsum dolor sit amet consectetur. Posuere vel condimentum rutrum sit habitant aliquet.",
+            description: "First time here? Welcome! New members receive a special one-time offer on their first package. Start strong!",
         },
     ],
 
@@ -140,13 +140,16 @@ export default {
     about_subtitle: 'Transform Your <span class="red">Body</span>, Elevate Your <span class="red">Life!</span>',
 
     //About Screen (About Wcu Section)
-    wcu_title: "Why <span class='highlight'>Choose</span> Us?",
+    wcu_title: "Why <span class='highlight'>Choose</span> Me?",
+
     wcu_card_1_title: "<span class='highlight'>Commitment</span> to results",
-    wcu_card_1_desc: "Lorem ipsum dolor sit amet consectetur posuere vel",
+    wcu_card_1_desc: "I don’t just promise — I deliver. Every plan I create is focused on helping you achieve real, lasting results.",
+
     wcu_card_2_title: "<span class='highlight'>Professional</span> & Certified Trainer",
-    wcu_card_2_desc: "Lorem ipsum dolor sit amet consectetur posuere vel",
+    wcu_card_2_desc: "As a certified personal trainer, I bring experience, passion, and full support to help you reach your goals.",
+
     wcu_card_3_title: "<span class='highlight'>Programs</span> for All Levels",
-    wcu_card_3_desc: "Lorem ipsum dolor sit amet consectetur posuere vel",
+    wcu_card_3_desc: "Whether you're a beginner or advanced, I’ll tailor a program that fits your level and pushes you forward.",
 
     // About Screen (About Certificates Section)
     certifications_heading: "My Certifications",
@@ -186,7 +189,7 @@ export default {
     contact_info_contact_title: "Contact Us",
 
     contact_info_phone: "Phone Number: +962 7 9060 6181",
-    contact_info_email: "Email : baderharash{'@'}gmail.com",
+    contact_info_email: "Email : info{'@'}harashfit.com",
 
     contact_info_connect_title: "Connect With Us",
 
@@ -202,13 +205,14 @@ export default {
     footer_description: "Independent Fitness & Bodybuilding Coach — empowering clients through personalized training and real dedication.",
     footer_contact_us: "Contact Us",
     footer_phone: "Phone Number : +962 7 9060 6181",
-    footer_email: "Email : baderharash{'@'}gmail.com",
+    footer_email: "Email : info{'@'}harashfit.com",
     footer_links_title: "Quick Links",
     footer_link_services: "Services",
     footer_link_blog: "Blog Archive",
     footer_link_about: "About Us",
     footer_link_team: "Contact Us",
-    footer_location_title: "Our Location",
+    footer_location_title: "Location",
+    footer_location_address: "Tlaa Al-Ali, Amman, Jordan",
     footer_hours_title: "Operating Hours",
     footer_hours_1: "Saturday - Wednesday : 08:00AM - 5:00PM",
     footer_hours_2: "Thursday : 08:00AM - 2:00PM",

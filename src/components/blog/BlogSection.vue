@@ -5,9 +5,9 @@
                 <h1 :lang="locale">{{ t('blog_hero_title') }}</h1>
                 <p v-html="t('blog_hero_text')" :lang="locale"></p>
             </div>
-            <div class="blog-image">
+            <!-- <div class="blog-image">
                 <img src="@/assets/images/home_1.webp" alt="Blog Hero" loading="lazy"/>
-            </div>
+            </div> -->
         </div>
     </section>
 </template>
@@ -21,9 +21,9 @@ const { t, locale } = useI18n();
 
 <style scoped>
 .blog-hero {
-    max-width: 1280px;
+    /* max-width: 1280px; */
     margin: auto;
-    padding: 70px 20px;
+    padding: 5px 20px;
     color: white;
     position: relative;
     overflow: hidden;
@@ -31,7 +31,7 @@ const { t, locale } = useI18n();
 
 .blog-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -44,13 +44,13 @@ const { t, locale } = useI18n();
 .blog-text h1 {
     font-size: 48px;
     font-weight: 800;
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
 
 .blog-text p {
     font-size: 24px;
-    text-align: left;
+    text-align: center;
 }
 
 ::v-deep(.red) {
@@ -58,7 +58,7 @@ const { t, locale } = useI18n();
     font-weight: bold;
 }
 
-.blog-image {
+/* .blog-image {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -68,7 +68,7 @@ const { t, locale } = useI18n();
 .blog-image img {
     height: 280px;
     object-fit: contain;
-}
+} */
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
@@ -80,30 +80,27 @@ const { t, locale } = useI18n();
         font-size: 20px;
     }
 
-    .blog-image img {
+    /* .blog-image img {
         height: 220px;
-    }
+    } */
 }
 
 @media (max-width: 768px) {
     .blog-hero {
-        margin-top: -27px;
-        padding: 70px 20px;
-        padding-top: 10px;
+        padding: 5px 25px;
     }
 
     .blog-container {
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        height: 350px;
-
+        align-items: center;
+        text-align: center;
+        height: 140px;
     }
 
     .blog-text {
         flex: unset;
         min-width: unset;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         width: 100%;
     }
 
@@ -113,10 +110,10 @@ const { t, locale } = useI18n();
     }
 
     .blog-text p {
-        text-align: left;
+        text-align: center;
     }
 
-    .blog-image {
+    /* .blog-image {
         position: relative;
         bottom: unset;
         right: unset;
@@ -130,6 +127,6 @@ const { t, locale } = useI18n();
         height: 200px;
         max-width: 280px;
         width: 100%;
-    }
+    } */
 }
 </style>

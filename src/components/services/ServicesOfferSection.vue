@@ -6,12 +6,12 @@
                 <div class="image-placeholder"></div>
                 <div class="stats">
                     <div class="stat-item">
-                        <h3>190+</h3>
-                        <p v-html="t('stats_satisfied')" :lang="locale"></p>
+                        <h3>5+</h3>
+                        <p v-html="t('stat_1')" :lang="locale"></p>
                     </div>
                     <div class="stat-item">
-                        <h3>120+</h3>
-                        <p v-html="t('stats_trainer')" :lang="locale"></p>
+                        <h3>2+</h3>
+                        <p v-html="t('stat_2')" :lang="locale"></p>
                     </div>
                 </div>
             </div>
@@ -25,9 +25,9 @@
                     :data-aos-delay="200 + index * 100" data-aos-duration="600">
                     <div class="offer-title">
                         <span class="icon">{{ offer.icon }}</span>
-                        <h4>{{ offer.title }}</h4>
+                        <h4 :lang="locale">{{ offer.title }}</h4>
                     </div>
-                    <p>{{ offer.description }}</p>
+                    <p :lang="locale">{{ offer.description }}</p>
                     <div class="separator"></div>
                 </div>
             </div>

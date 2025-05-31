@@ -54,7 +54,7 @@
             <h2>10. Contact</h2>
             <p>
                 For any questions or concerns regarding these Terms, please contact us at:<br />
-                <strong>Email:</strong> baderharash@harashfit.com<br />
+                <strong>Email:</strong> info@harashfit.com<br />
                 <strong>Phone:</strong> +962 7 9060 6181
             </p>
 

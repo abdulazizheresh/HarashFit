@@ -5,9 +5,9 @@
                 <h1 v-html="t('about_title')" :lang="locale"></h1>
                 <p v-html="t('about_subtitle')" :lang="locale"></p>
             </div>
-            <div class="about-image">
-                <img src="@/assets/images/home_1.webp" alt="About Us" loading="lazy"/>
-            </div>
+            <!-- <div class="about-image">
+                <img src="@/assets/images/home_1.webp" alt="About Us" />
+            </div> -->
         </div>
     </section>
 </template>
@@ -20,18 +20,21 @@ const { t, locale } = useI18n();
 
 <style scoped>
 .about-hero {
-    max-width: 1280px;
-    margin: auto;
-    padding: 70px 20px;
+    padding: 5px 20px;
+    margin: 0 auto;
     color: white;
-    position: relative;
-    overflow: hidden;
+    /* align-items: center; */
+    text-align: center;
+    /* position: relative; */
+    /* overflow: hidden; */
 }
 
 .about-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin: auto;
     width: 100%;
 }
 
@@ -41,15 +44,17 @@ const { t, locale } = useI18n();
 }
 
 .about-text h1 {
+    color: white;
+    background-clip: text;
     font-size: 48px;
     font-weight: 800;
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
 
 .about-text p {
     font-size: 24px;
-    text-align: left;
+    text-align: center;
 }
 
 ::v-deep(.red) {
@@ -57,7 +62,7 @@ const { t, locale } = useI18n();
     font-weight: bold;
 }
 
-.about-image {
+/* .about-image {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -67,7 +72,7 @@ const { t, locale } = useI18n();
 .about-image img {
     height: 280px;
     object-fit: contain;
-}
+} */
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
@@ -79,30 +84,29 @@ const { t, locale } = useI18n();
         font-size: 20px;
     }
 
-    .about-image img {
+    /* .about-image img {
         height: 220px;
-    }
+    } */
 }
 
 @media (max-width: 768px) {
     .about-hero {
-        margin-top: -27px;
-        padding: 70px 20px;
+        /* margin-top: -27px; */
+        padding: 5px 25px;
         padding-top: 10px;
     }
 
     .about-container {
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        height: 350px;
+        align-items: center;
+        text-align: center;
+        height: 140px;
 
     }
 
     .about-text {
         flex: unset;
         min-width: unset;
-        margin-bottom: 30px;
         width: 100%;
     }
 
@@ -112,10 +116,10 @@ const { t, locale } = useI18n();
     }
 
     .about-text p {
-        text-align: left;
+        text-align: center;
     }
 
-    .about-image {
+    /* .about-image {
         position: relative;
         bottom: unset;
         right: unset;
@@ -129,6 +133,6 @@ const { t, locale } = useI18n();
         height: 200px;
         max-width: 280px;
         width: 100%;
-    }
+    } */
 }
 </style>

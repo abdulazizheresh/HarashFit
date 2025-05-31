@@ -68,7 +68,7 @@
             <h2>9. Contact</h2>
             <p>
                 If you have any questions or requests regarding this Privacy Policy, please contact us:<br />
-                <strong>Email:</strong> baderharash@harashfit.com<br />
+                <strong>Email:</strong> info@harashfit.com<br />
                 <strong>Phone:</strong> +962 7 9060 6181<br />
                 <strong>Address:</strong> Amman, Jordan
             </p>

@@ -13,7 +13,7 @@
             <h2>Contact</h2>
             <p>
                 Phone: +962 7 9060 6181<br>
-                Email: baderharash@harashfit.com<br>
+                Email: info@harashfit.com<br>
                 Website: <a href="https://www.harashfit.com" target="_blank">www.harashfit.com</a>
             </p>
 

@@ -7,11 +7,11 @@
 
                 <div class="stats">
                     <div class="stat">
-                        <h2>190+</h2>
+                        <h2>5+</h2>
                         <p>{{ t('stat_1') }}</p>
                     </div>
                     <div class="stat">
-                        <h2>120+</h2>
+                        <h2>2+</h2>
                         <p>{{ t('stat_2') }}</p>
                     </div>
                 </div>
@@ -26,8 +26,11 @@
             </div>
 
             <div class="right">
-                <img src="@/assets/images/home_1.webp" alt="Hero" class="hero-img" loading="lazy"/>
+                <div class="hero-card">
+                    <img src="@/assets/images/home.webp" alt="Hero" class="hero-img" loading="lazy" />
+                </div>
             </div>
+
         </div>
     </section>
 </template>
@@ -39,7 +42,7 @@ const { t, locale } = useI18n();
 
 <style scoped>
 .hero-section {
-    padding: 50px 40px;
+    padding: 20px 40px;
     color: white;
     min-height: calc(40vh - 100px);
 }
@@ -51,7 +54,7 @@ const { t, locale } = useI18n();
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 75px;
 }
 
 .left {
@@ -65,11 +68,30 @@ const { t, locale } = useI18n();
     text-align: center;
 }
 
+.hero-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 18px;
+    display: inline-block;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s ease;
+}
+
 .hero-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 17px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    max-width: 400px;
+    height: 470px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    filter: brightness(1.05) contrast(1.05) saturate(1.1);
+}
+
+.hero-card:hover {
+    transform: scale(1.03);
 }
 
 h1 {
@@ -146,9 +168,24 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
-  .hero-section {
-    padding-top: 0px;
-    min-height: auto;
-  }
+    .hero-section {
+        padding-top: 0px;
+        min-height: auto;
+    }
+
+    .hero-card {
+        max-width: 90%;
+        padding: 12px;
+        margin: 0 auto;
+    }
+
+    .hero-img {
+        max-width: 100%;
+        height: 385px;
+        border-radius: 16px;
+        object-fit: cover;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
 }
 </style>

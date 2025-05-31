@@ -5,9 +5,9 @@
                 <h1 :lang="locale">{{ t('contact_hero_title') }}</h1>
                 <p v-html="t('contact_hero_paragraph')" :lang="locale"></p>
             </div>
-            <div class="contact-image">
+            <!-- <div class="contact-image">
                 <img src="@/assets/images/home_1.webp" alt="Contact Us" loading="lazy"/>
-            </div>
+            </div> -->
         </div>
     </section>
 </template>
@@ -21,9 +21,8 @@ const { t, locale } = useI18n();
 
 <style scoped>
 .contact-hero {
-    max-width: 1280px;
     margin: auto;
-    padding: 70px 20px;
+    padding: 5px 20px;
     color: white;
     position: relative;
     overflow: hidden;
@@ -31,7 +30,7 @@ const { t, locale } = useI18n();
 
 .contact-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -44,13 +43,13 @@ const { t, locale } = useI18n();
 .contact-text h1 {
     font-size: 48px;
     font-weight: 800;
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
 
 .contact-text p {
     font-size: 24px;
-    text-align: left;
+    text-align: center;
 }
 
 ::v-deep(.red) {
@@ -58,7 +57,7 @@ const { t, locale } = useI18n();
     font-weight: bold;
 }
 
-.contact-image {
+/* .contact-image {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -68,7 +67,7 @@ const { t, locale } = useI18n();
 .contact-image img {
     height: 280px;
     object-fit: contain;
-}
+} */
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
@@ -80,29 +79,27 @@ const { t, locale } = useI18n();
         font-size: 20px;
     }
 
-    .contact-image img {
+    /* .contact-image img {
         height: 220px;
-    }
+    } */
 }
 
 @media (max-width: 768px) {
     .contact-hero {
-        margin-top: -27px;
-        padding: 70px 20px;
-        padding-top: 10px;
+        padding: 5px 25px;
     }
 
     .contact-container {
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        height: 350px;
+        align-items: center;
+        text-align: center;
+        height: 140px;
     }
 
     .contact-text {
         flex: unset;
         min-width: unset;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         width: 100%;
     }
 
@@ -112,10 +109,10 @@ const { t, locale } = useI18n();
     }
 
     .contact-text p {
-        text-align: left;
+        text-align: center;
     }
 
-    .contact-image {
+    /* .contact-image {
         position: relative;
         bottom: unset;
         right: unset;
@@ -128,6 +125,6 @@ const { t, locale } = useI18n();
     .contact-image img {
         height: 200px;
         width: 100%;
-    }
+    } */
 }
 </style>

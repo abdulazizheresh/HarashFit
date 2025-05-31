@@ -126,6 +126,7 @@ const translatedCards = computed(() => [
 .card-description {
     font-size: 16px;
     color: #ccc;
+    text-align: center;
     margin-top: 10px;
 }
 
